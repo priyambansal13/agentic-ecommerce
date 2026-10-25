@@ -114,7 +114,7 @@ stop with `pkill -f "ac.mjs dev"`.
 
 ## Open items / next steps
 
-1. Commit the three repos (and push to GitHub so the CI workflows run).
+1. ~~Commit~~ done 2026-10-25: one monorepo pushed to https://github.com/priyambansal13/agentic-ecommerce (`main`); CI = root `.github/workflows/{platform,backend,backend-release-libs,frontend}.yml`, path-filtered. Deploy jobs need GitHub secrets PROD_KUBECONFIG / PROD_ENV + a `prod` environment; image pushes go to ghcr.
 2. ~~Login in zones~~ done (own OIDC in `@ac/bff`); next: dashboard actions (approve/reject refunds, moderation decisions) via command APIs with Idempotency-Key + dual control.
 3. Phase 1 business features ([roadmap](05-roadmap.md)): catalog CRUD, search indexer, storefront pages.
 4. Agent token exchange (Keycloak RFC 8693), Redis-backed budgets/kill switch, first real agent (refund, shadow mode).
