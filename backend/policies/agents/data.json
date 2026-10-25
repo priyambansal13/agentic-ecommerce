@@ -1,0 +1,78 @@
+{
+  "limits": {
+    "refund": {
+      "auto_max_minor": {
+        "INR": 200000,
+        "USD": 2500
+      },
+      "dual_control_minor": {
+        "INR": 2500000,
+        "USD": 30000
+      },
+      "max_risk": 0.3
+    }
+  },
+  "killswitch": {},
+  "agent_tools": {
+    "refund": [
+      "getCaseContext",
+      "getOrder",
+      "getTracking",
+      "getBuyerRefundHistory",
+      "searchPolicyDocs",
+      "findSimilarCases",
+      "scoreRisk",
+      "evaluatePolicy",
+      "requestBuyerEvidence",
+      "submitProposal",
+      "executeRefund",
+      "createReplacementOrder",
+      "issueStoreCredit"
+    ],
+    "assistant": [
+      "searchProducts",
+      "getProducts",
+      "getProductQa",
+      "addToCart"
+    ],
+    "order-support": [
+      "getOrder",
+      "getTracking",
+      "cancelOrder",
+      "createSupportTicket"
+    ],
+    "listing-copilot": [
+      "getCategoryTree",
+      "getCategorySchema",
+      "searchProducts",
+      "saveListingDraft"
+    ],
+    "seller-insights": [
+      "getSales",
+      "getTopProducts",
+      "getReturnReasons",
+      "getStockCover"
+    ],
+    "moderation": [
+      "getProduct",
+      "getSellerProfile",
+      "submitModerationVerdict"
+    ],
+    "fraud-investigator": [
+      "getLinkedEntities",
+      "getOrders",
+      "getBuyerRefundHistory",
+      "attachAlertSummary"
+    ],
+    "dispute": [
+      "getDispute",
+      "getOrder",
+      "searchPolicyDocs",
+      "findSimilarCases",
+      "attachDisputeRecommendation"
+    ],
+    "ping": [
+      "echo"
+    ]
+  }
+}

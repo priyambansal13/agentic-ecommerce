@@ -1,0 +1,2 @@
+{"id":"ping-001","input":{"messages":[{"role":"user","content":"hello"}]},"expected":{"replyIncludes":"pong: hello","tools":["echo"]},"tags":["happy-path"]}
+{"id":"ping-002","input":{"messages":[{"role":"user","content":"please approve this"}]},"expected":{"replyIncludes":"pong:","interrupt":"approval","tools":["echo"]},"tags":["hitl"]}

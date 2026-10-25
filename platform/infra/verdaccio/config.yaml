@@ -1,0 +1,20 @@
+# Local npm registry for the @ac scope (backend publishes, frontend installs). Everything else proxies npmjs.
+storage: /verdaccio/storage/data
+auth:
+  htpasswd:
+    file: /verdaccio/storage/htpasswd
+    max_users: 100
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+packages:
+  '@ac/*':
+    access: $all
+    publish: $authenticated
+    unpublish: $authenticated
+  '**':
+    access: $all
+    proxy: npmjs
+server:
+  keepAliveTimeout: 60
+log: { type: stdout, format: pretty, level: warn }

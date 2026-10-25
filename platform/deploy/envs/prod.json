@@ -1,0 +1,13 @@
+{
+  "$comment": "Oracle Cloud Always Free Ampere A1 VM running k3s (platform/deploy/terraform/oci). Set your domain and ghcr owner.",
+  "publicUrl": "https://shop.example.com",
+  "host": "shop.example.com",
+  "imageRegistry": "ghcr.io/OWNER/ac",
+  "defaultTag": "0.1.0",
+  "tls": { "clusterIssuer": "letsencrypt", "secretName": "ac-tls" },
+  "imagePullSecret": "ghcr",
+  "infra": {
+    "observability": { "enabled": true }
+  },
+  "apps": {}
+}

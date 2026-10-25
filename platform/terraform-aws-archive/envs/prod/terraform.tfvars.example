@@ -1,0 +1,11 @@
+region          = "ap-south-1"
+certificate_arn = "arn:aws:acm:ap-south-1:123456789012:certificate/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+public_app_url  = "https://www.example.com"
+oidc_issuers    = ["https://auth.example.com/realms/customers", "https://auth.example.com/realms/staff"]
+cors_origins    = ["https://www.example.com"]
+
+manage_ecr_repositories = false # true only if prod lives in its own AWS account
+dedicated_db_services   = ["payment"]
+
+default_image_tag = "REPLACE_WITH_GIT_SHA"
+image_tags        = {}

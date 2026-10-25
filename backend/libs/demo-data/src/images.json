@@ -1,0 +1,1935 @@
+{
+ "_note": "Curated demo photos (Openverse / Wikimedia Commons), licences CC0, Public Domain or CC BY only — credit the creator wherever shown. Keys: base product type (demo-data CATALOG item) and category id.",
+ "products": {
+  "Trail running shoes": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Salomon_XA_PRO_3D_trail_running_shoe.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Salomon_XA_PRO_3D_trail_running_shoe.jpg/1280px-Salomon_XA_PRO_3D_trail_running_shoe.jpg",
+    "title": "Salomon XA PRO 3D trail running shoe",
+    "creator": "JaredMcKenzie",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Salomon_XA_PRO_3D_trail_running_shoe.jpg",
+    "width": 8192,
+    "height": 6144,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/New_Balance_1225_Running_Shoes.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/New_Balance_1225_Running_Shoes.jpg/1280px-New_Balance_1225_Running_Shoes.jpg",
+    "title": "New Balance 1225 Running Shoes",
+    "creator": "slgckgc",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:New_Balance_1225_Running_Shoes.jpg",
+    "width": 2716,
+    "height": 1818,
+    "provider": "wikimedia"
+   }
+  ],
+  "Steel water bottle 1 L": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/45/Metal_Water_Bottles.jpeg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Metal_Water_Bottles.jpeg",
+    "title": "Metal Water Bottles",
+    "creator": "Amraepowell",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Metal_Water_Bottles.jpeg",
+    "width": 1024,
+    "height": 768,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://live.staticflickr.com/4246/34776192110_5dee9c8cf4_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/4246/34776192110_5dee9c8cf4_b.jpg",
+    "title": "Water Bottles",
+    "creator": "Worlds Direction",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sourceUrl": "https://www.flickr.com/photos/144661696@N05/34776192110",
+    "width": 1024,
+    "height": 687,
+    "provider": "flickr"
+   },
+   {
+    "url": "https://live.staticflickr.com/8207/8222537768_bc7fd20488_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/8207/8222537768_bc7fd20488_b.jpg",
+    "title": "the better bottle...",
+    "creator": "michael pollak",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/22294215@N06/8222537768",
+    "width": 1024,
+    "height": 685,
+    "provider": "flickr"
+   }
+  ],
+  "Hiking backpack 30 L": [
+   {
+    "url": "https://live.staticflickr.com/97/207756390_b44475411e_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/97/207756390_b44475411e_b.jpg",
+    "title": "hiking backpack",
+    "creator": "andrew.petro",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/14362628@N00/207756390",
+    "width": 1024,
+    "height": 769,
+    "provider": "flickr"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Hiking_in_Lacoste_%28Unsplash%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Hiking_in_Lacoste_%28Unsplash%29.jpg/1280px-Hiking_in_Lacoste_%28Unsplash%29.jpg",
+    "title": "Hiking in Lacoste (Unsplash)",
+    "creator": "Andrew Milko a_m",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hiking_in_Lacoste_(Unsplash).jpg",
+    "width": 3456,
+    "height": 5184,
+    "provider": "wikimedia"
+   }
+  ],
+  "Trekking poles": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Retracted_trekking_poles.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Retracted_trekking_poles.jpg/1280px-Retracted_trekking_poles.jpg",
+    "title": "Retracted trekking poles",
+    "creator": "Sarang",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Retracted_trekking_poles.jpg",
+    "width": 4370,
+    "height": 844,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://live.staticflickr.com/4753/40413879291_3d87bd7456_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/4753/40413879291_3d87bd7456_b.jpg",
+    "title": "Trekking poles",
+    "creator": "nordique",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/28435100@N00/40413879291",
+    "width": 1024,
+    "height": 768,
+    "provider": "flickr"
+   },
+   {
+    "url": "https://live.staticflickr.com/65535/49398623977_d6caf9d963_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/65535/49398623977_d6caf9d963_b.jpg",
+    "title": "Trekking Poles",
+    "creator": "krossbow",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/13194817@N00/49398623977",
+    "width": 1024,
+    "height": 838,
+    "provider": "flickr"
+   }
+  ],
+  "Camping lantern": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/28/Streamlight_LED_Camping_Lantern_-_The_Siege_%2841339394074%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Streamlight_LED_Camping_Lantern_-_The_Siege_%2841339394074%29.jpg/1280px-Streamlight_LED_Camping_Lantern_-_The_Siege_%2841339394074%29.jpg",
+    "title": "Streamlight LED Camping Lantern - The Siege (41339394074)",
+    "creator": "Tony Webster",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Streamlight_LED_Camping_Lantern_-_The_Siege_(41339394074).jpg",
+    "width": 5515,
+    "height": 3574,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Old_lantern_in_Brittany.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/Old_lantern_in_Brittany.jpg",
+    "title": "Old lantern in Brittany",
+    "creator": "Syced",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Old_lantern_in_Brittany.jpg",
+    "width": 960,
+    "height": 1280,
+    "provider": "wikimedia"
+   }
+  ],
+  "Rain jacket": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Raincoat.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Raincoat.jpg/1280px-Raincoat.jpg",
+    "title": "Raincoat",
+    "creator": "B. Kroll",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raincoat.jpg",
+    "width": 1536,
+    "height": 2048,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Raincoat_%28AM_1979.59-1%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Raincoat_%28AM_1979.59-1%29.jpg/1280px-Raincoat_%28AM_1979.59-1%29.jpg",
+    "title": "Raincoat",
+    "creator": "Auckland Museum",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raincoat_(AM_1979.59-1).jpg",
+    "width": 1830,
+    "height": 3138,
+    "provider": "wikimedia"
+   }
+  ],
+  "Sleeping bag": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Compactsleepingbag.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Compactsleepingbag.jpg/1280px-Compactsleepingbag.jpg",
+    "title": "Compactsleepingbag",
+    "creator": "User:James086",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Compactsleepingbag.jpg",
+    "width": 2592,
+    "height": 1944,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Compactsleepingbag_-_sleeping_bag_without_background.png",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Compactsleepingbag_-_sleeping_bag_without_background.png/1280px-Compactsleepingbag_-_sleeping_bag_without_background.png",
+    "title": "Compactsleepingbag - sleeping bag without background",
+    "creator": "James086, derivative work by Itai",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Compactsleepingbag_-_sleeping_bag_without_background.png",
+    "width": 2044,
+    "height": 1170,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Mummy_bag.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Mummy_bag.jpg/1280px-Mummy_bag.jpg",
+    "title": "Mummy bag",
+    "creator": "Smack",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mummy_bag.jpg",
+    "width": 1536,
+    "height": 2048,
+    "provider": "wikimedia"
+   }
+  ],
+  "Headlamp": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Fenix_P1D_LED_flashlight_%282739718566%29.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Fenix_P1D_LED_flashlight_%282739718566%29.jpg",
+    "title": "Fenix P1D LED flashlight (2739718566)",
+    "creator": "Darron Birgenheier",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fenix_P1D_LED_flashlight_(2739718566).jpg",
+    "width": 1024,
+    "height": 706,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Circa_1960_Daimon_8028_flashlight_manufactured_by_Daimon_Werke_Berlin_Germany_view_2.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Circa_1960_Daimon_8028_flashlight_manufactured_by_Daimon_Werke_Berlin_Germany_view_2.jpg/1280px-Circa_1960_Daimon_8028_flashlight_manufactured_by_Daimon_Werke_Berlin_Germany_view_2.jpg",
+    "title": "Circa 1960 Daimon 8028 flashlight manufactured by Daimon Werke Berlin Germany view 2",
+    "creator": "R. Henrik Nilsson",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Circa_1960_Daimon_8028_flashlight_manufactured_by_Daimon_Werke_Berlin_Germany_view_2.jpg",
+    "width": 2168,
+    "height": 1668,
+    "provider": "wikimedia"
+   }
+  ],
+  "Noise-cancelling headphones": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Headphones_on_wood_in_black_and_white_%28Unsplash%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Headphones_on_wood_in_black_and_white_%28Unsplash%29.jpg/1280px-Headphones_on_wood_in_black_and_white_%28Unsplash%29.jpg",
+    "title": "Headphones on wood in black and white (Unsplash)",
+    "creator": "Corey Blaz blazphoto",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Headphones_on_wood_in_black_and_white_(Unsplash).jpg",
+    "width": 6016,
+    "height": 4016,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Black_brown_headphones_wired.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/Black_brown_headphones_wired.jpg/1280px-Black_brown_headphones_wired.jpg",
+    "title": "Black brown headphones wired",
+    "creator": "Marcus-richardson",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Black_brown_headphones_wired.jpg",
+    "width": 2560,
+    "height": 1920,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://live.staticflickr.com/3779/11140908364_f55c6784c3_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/3779/11140908364_f55c6784c3_b.jpg",
+    "title": "Headphones",
+    "creator": "blacklerphotos",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/110255976@N07/11140908364",
+    "width": 1024,
+    "height": 768,
+    "provider": "flickr"
+   }
+  ],
+  "Bluetooth speaker": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Bluetooth_Speakers_%2841561673055%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Bluetooth_Speakers_%2841561673055%29.jpg/1280px-Bluetooth_Speakers_%2841561673055%29.jpg",
+    "title": "Bluetooth Speakers (41561673055)",
+    "creator": "unmatched value",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bluetooth_Speakers_(41561673055).jpg",
+    "width": 4032,
+    "height": 1960,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://live.staticflickr.com/7475/26909949316_6d99b6ba44_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/7475/26909949316_6d99b6ba44_b.jpg",
+    "title": "Sony Bluetooth speaker",
+    "creator": "renaissancechambara",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/39435232@N00/26909949316",
+    "width": 1024,
+    "height": 683,
+    "provider": "flickr"
+   },
+   {
+    "url": "https://live.staticflickr.com/3945/33573968431_513eebac48_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/3945/33573968431_513eebac48_b.jpg",
+    "title": "A portable Bluetooth speaker with great bass? Yep! The ARCHEER A320. My review on my site (link in profile).",
+    "creator": "HighTechDad",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/22473198@N00/33573968431",
+    "width": 1024,
+    "height": 1024,
+    "provider": "flickr"
+   }
+  ],
+  "USB-C charger 65 W": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Orico_YC-PE0508000H_multiport_USB_charger-0.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Orico_YC-PE0508000H_multiport_USB_charger-0.jpg",
+    "title": "Orico YC-PE0508000H multiport USB charger-0",
+    "creator": "Imgrenb",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orico_YC-PE0508000H_multiport_USB_charger-0.jpg",
+    "width": 843,
+    "height": 627,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Pisen_MF-08EU_12W_USB_charger-0.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Pisen_MF-08EU_12W_USB_charger-0.jpg/1280px-Pisen_MF-08EU_12W_USB_charger-0.jpg",
+    "title": "Pisen MF-08EU 12W USB charger-0",
+    "creator": "Imgrenb",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pisen_MF-08EU_12W_USB_charger-0.jpg",
+    "width": 4032,
+    "height": 3024,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Orico_YC-PE0508000H_multiport_USB_charger-1.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Orico_YC-PE0508000H_multiport_USB_charger-1.jpg/1280px-Orico_YC-PE0508000H_multiport_USB_charger-1.jpg",
+    "title": "Orico YC-PE0508000H multiport USB charger-1",
+    "creator": "Imgrenb",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Orico_YC-PE0508000H_multiport_USB_charger-1.jpg",
+    "width": 4032,
+    "height": 3024,
+    "provider": "wikimedia"
+   }
+  ],
+  "Smartwatch": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/LG_G_Watch_R_%2815060749630%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/LG_G_Watch_R_%2815060749630%29.jpg/1280px-LG_G_Watch_R_%2815060749630%29.jpg",
+    "title": "LG G Watch R (15060749630)",
+    "creator": "Maurizio Pesce from Milan, Italia",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:LG_G_Watch_R_(15060749630).jpg",
+    "width": 5184,
+    "height": 3456,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/LG_G_Watch_R_%2815060868898%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/LG_G_Watch_R_%2815060868898%29.jpg/1280px-LG_G_Watch_R_%2815060868898%29.jpg",
+    "title": "LG G Watch R (15060868898)",
+    "creator": "Maurizio Pesce from Milan, Italia",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:LG_G_Watch_R_(15060868898).jpg",
+    "width": 5184,
+    "height": 3456,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Android_Wear_Smartwatch-_LG_G_Watch_%2815048721571%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Android_Wear_Smartwatch-_LG_G_Watch_%2815048721571%29.jpg/1280px-Android_Wear_Smartwatch-_LG_G_Watch_%2815048721571%29.jpg",
+    "title": "Android Wear Smartwatch- LG G Watch (15048721571)",
+    "creator": "Maurizio Pesce from Milan, Italia",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Android_Wear_Smartwatch-_LG_G_Watch_(15048721571).jpg",
+    "width": 5184,
+    "height": 3456,
+    "provider": "wikimedia"
+   }
+  ],
+  "Wireless mouse": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/ComputerMouseCloseup3.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/ComputerMouseCloseup3.jpg/1280px-ComputerMouseCloseup3.jpg",
+    "title": "ComputerMouseCloseup3",
+    "creator": "Raysonho @ Open Grid Scheduler / Grid Engine",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ComputerMouseCloseup3.jpg",
+    "width": 4928,
+    "height": 3264,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Arratoia_%28PC%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Arratoia_%28PC%29.jpg/1280px-Arratoia_%28PC%29.jpg",
+    "title": "Arratoia (PC)",
+    "creator": "Batx2AntiguaLuberri",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Arratoia_(PC).jpg",
+    "width": 2268,
+    "height": 4032,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://live.staticflickr.com/7242/6848810640_95f2076266_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/7242/6848810640_95f2076266_b.jpg",
+    "title": "Computer Mouse Isolated on White Background",
+    "creator": "Trostle",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/42183150@N00/6848810640",
+    "width": 1024,
+    "height": 683,
+    "provider": "flickr"
+   }
+  ],
+  "Mechanical keyboard": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/2018_Bay_Area_Mechanical_Keyboard_Meetup_%2845034409185%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/2018_Bay_Area_Mechanical_Keyboard_Meetup_%2845034409185%29.jpg/1280px-2018_Bay_Area_Mechanical_Keyboard_Meetup_%2845034409185%29.jpg",
+    "title": "2018 Bay Area Mechanical Keyboard Meetup (45034409185)",
+    "creator": "Patrick Breen",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2018_Bay_Area_Mechanical_Keyboard_Meetup_(45034409185).jpg",
+    "width": 4608,
+    "height": 3456,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/2018_Bay_Area_Mechanical_Keyboard_Meetup_%2845897443422%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/2018_Bay_Area_Mechanical_Keyboard_Meetup_%2845897443422%29.jpg/1280px-2018_Bay_Area_Mechanical_Keyboard_Meetup_%2845897443422%29.jpg",
+    "title": "2018 Bay Area Mechanical Keyboard Meetup (45897443422)",
+    "creator": "Patrick Breen",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2018_Bay_Area_Mechanical_Keyboard_Meetup_(45897443422).jpg",
+    "width": 4608,
+    "height": 3456,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/2018_Bay_Area_Mechanical_Keyboard_Meetup_%2845946724001%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/2018_Bay_Area_Mechanical_Keyboard_Meetup_%2845946724001%29.jpg/1280px-2018_Bay_Area_Mechanical_Keyboard_Meetup_%2845946724001%29.jpg",
+    "title": "2018 Bay Area Mechanical Keyboard Meetup (45946724001)",
+    "creator": "Patrick Breen",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:2018_Bay_Area_Mechanical_Keyboard_Meetup_(45946724001).jpg",
+    "width": 4608,
+    "height": 2044,
+    "provider": "wikimedia"
+   }
+  ],
+  "Power bank 20000 mAh": [
+   {
+    "url": "https://live.staticflickr.com/3745/9720052690_733188bb62_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/3745/9720052690_733188bb62_b.jpg",
+    "title": "モバイルバッテリー ANKER Power Bank 4,500mAh",
+    "creator": "Tranpan23",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/78077658@N02/9720052690",
+    "width": 1024,
+    "height": 685,
+    "provider": "flickr"
+   },
+   {
+    "url": "https://live.staticflickr.com/7363/9716815187_d7e58f5f1b_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/7363/9716815187_d7e58f5f1b_b.jpg",
+    "title": "モバイルバッテリー ANKER Power Bank 4,500mAh",
+    "creator": "Tranpan23",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/78077658@N02/9716815187",
+    "width": 1024,
+    "height": 667,
+    "provider": "flickr"
+   },
+   {
+    "url": "https://live.staticflickr.com/4472/37557956782_96c514d459_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/4472/37557956782_96c514d459_b.jpg",
+    "title": "Power bank",
+    "creator": "EU2017EE",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/145047505@N06/37557956782",
+    "width": 1024,
+    "height": 683,
+    "provider": "flickr"
+   }
+  ],
+  "Earbuds": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/ActiveSound_wireless_earbuds_by_Hykker_%28POJM200483%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/ActiveSound_wireless_earbuds_by_Hykker_%28POJM200483%29.jpg/1280px-ActiveSound_wireless_earbuds_by_Hykker_%28POJM200483%29.jpg",
+    "title": "ActiveSound wireless earbuds by Hykker (POJM200483)",
+    "creator": "Wikimedia Commons contributor",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ActiveSound_wireless_earbuds_by_Hykker_(POJM200483).jpg",
+    "width": 2576,
+    "height": 1932,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Yamaha_TW-E3A_Earbuds_Customize%2C_Japan%3B_April_2021_%2801%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Yamaha_TW-E3A_Earbuds_Customize%2C_Japan%3B_April_2021_%2801%29.jpg/1280px-Yamaha_TW-E3A_Earbuds_Customize%2C_Japan%3B_April_2021_%2801%29.jpg",
+    "title": "Yamaha TW-E3A Earbuds Customize, Japan; April 2021 (01)",
+    "creator": "MIKI Yoshihito. (#mikiyoshihito)",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yamaha_TW-E3A_Earbuds_Customize,_Japan;_April_2021_(01).jpg",
+    "width": 5021,
+    "height": 2823,
+    "provider": "wikimedia"
+   }
+  ],
+  "Ceramic dinner set": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f6/Plate_MET_ES4276.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Plate_MET_ES4276.jpg/1280px-Plate_MET_ES4276.jpg",
+    "title": "Plate",
+    "creator": "Félix Bracquemond / Haviland & Co.",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plate_MET_ES4276.jpg",
+    "width": 1332,
+    "height": 1320,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Plate_MET_ES4275.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Plate_MET_ES4275.jpg/1280px-Plate_MET_ES4275.jpg",
+    "title": "Plate",
+    "creator": "Haviland & Co. / Félix Bracquemond",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Plate_MET_ES4275.jpg",
+    "width": 1332,
+    "height": 1340,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Dish_with_%27Tughra-illuminator%27_Design_MET_DP214299.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Dish_with_%27Tughra-illuminator%27_Design_MET_DP214299.jpg/1280px-Dish_with_%27Tughra-illuminator%27_Design_MET_DP214299.jpg",
+    "title": "Dish with 'Tughra-illuminator' Design",
+    "creator": "The Metropolitan Museum of Art",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dish_with_%27Tughra-illuminator%27_Design_MET_DP214299.jpg",
+    "width": 2995,
+    "height": 4000,
+    "provider": "wikimedia"
+   }
+  ],
+  "Cotton bedsheet": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Sheet%2C_bed_%282%29_%28AM_1991.288-1%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Sheet%2C_bed_%282%29_%28AM_1991.288-1%29.jpg/1280px-Sheet%2C_bed_%282%29_%28AM_1991.288-1%29.jpg",
+    "title": "sheet, bed (2)",
+    "creator": "Farmer's Trading Company",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sheet,_bed_(2)_(AM_1991.288-1).jpg",
+    "width": 2236,
+    "height": 1152,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Sheet%2C_bed_%28AM_1969.168-1%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Sheet%2C_bed_%28AM_1969.168-1%29.jpg/1280px-Sheet%2C_bed_%28AM_1969.168-1%29.jpg",
+    "title": "Sheet, bed",
+    "creator": "Unknown author",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sheet,_bed_(AM_1969.168-1).jpg",
+    "width": 1944,
+    "height": 2592,
+    "provider": "wikimedia"
+   }
+  ],
+  "Table lamp": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/MarsPerSundstedtAteljeLyktan.png",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/MarsPerSundstedtAteljeLyktan.png/1280px-MarsPerSundstedtAteljeLyktan.png",
+    "title": "MarsPerSundstedtAteljeLyktan",
+    "creator": "Thentic",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:MarsPerSundstedtAteljeLyktan.png",
+    "width": 3024,
+    "height": 4032,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Poul_Henningsen_-_PH_1941_lamp.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Poul_Henningsen_-_PH_1941_lamp.jpg/1280px-Poul_Henningsen_-_PH_1941_lamp.jpg",
+    "title": "Poul Henningsen - PH 1941 lamp",
+    "creator": "Poul Henningsen",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Poul_Henningsen_-_PH_1941_lamp.jpg",
+    "width": 3648,
+    "height": 4530,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Wooden_Antique_Table_Lamp.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/Wooden_Antique_Table_Lamp.jpg/1280px-Wooden_Antique_Table_Lamp.jpg",
+    "title": "Wooden Antique Table Lamp",
+    "creator": "Amitbalani",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wooden_Antique_Table_Lamp.jpg",
+    "width": 1502,
+    "height": 4000,
+    "provider": "wikimedia"
+   }
+  ],
+  "Wall clock": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Antique_Wooden_SEC_Wall_Clock.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Antique_Wooden_SEC_Wall_Clock.jpg/1280px-Antique_Wooden_SEC_Wall_Clock.jpg",
+    "title": "Antique Wooden SEC Wall Clock",
+    "creator": "Amitbalani",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antique_Wooden_SEC_Wall_Clock.jpg",
+    "width": 3000,
+    "height": 4000,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://live.staticflickr.com/3177/2658021420_9d52508998_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/3177/2658021420_9d52508998_b.jpg",
+    "title": "Early General Electric Colored Wall Clock",
+    "creator": "alexkerhead",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/26354629@N02/2658021420",
+    "width": 1024,
+    "height": 990,
+    "provider": "flickr"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Antique_wall_clock.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Antique_wall_clock.jpg/1280px-Antique_wall_clock.jpg",
+    "title": "Antique wall clock",
+    "creator": "Amitbalani",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Antique_wall_clock.jpg",
+    "width": 2490,
+    "height": 3363,
+    "provider": "wikimedia"
+   }
+  ],
+  "Scented candle set": [
+   {
+    "url": "https://live.staticflickr.com/3465/3984411975_66212b3fc7_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/3465/3984411975_66212b3fc7_b.jpg",
+    "title": "Candles",
+    "creator": "L.C.Nøttaasen",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/35166455@N00/3984411975",
+    "width": 1024,
+    "height": 681,
+    "provider": "flickr"
+   },
+   {
+    "url": "https://live.staticflickr.com/3575/3346992274_aaf736d199_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/3575/3346992274_aaf736d199_b.jpg",
+    "title": "Cherry Blossom Candle - Match and Wick",
+    "creator": "slgckgc",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/14771153@N04/3346992274",
+    "width": 1024,
+    "height": 685,
+    "provider": "flickr"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Religious_candles%2C_Aachen%2C_Germany.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Religious_candles%2C_Aachen%2C_Germany.jpg/1280px-Religious_candles%2C_Aachen%2C_Germany.jpg",
+    "title": "Religious candles, Aachen, Germany",
+    "creator": "Jebulon",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Religious_candles,_Aachen,_Germany.jpg",
+    "width": 4872,
+    "height": 3385,
+    "provider": "wikimedia"
+   }
+  ],
+  "Cushion covers": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Mink_cushions_at_Saga_Furs.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/08/Mink_cushions_at_Saga_Furs.jpg/1280px-Mink_cushions_at_Saga_Furs.jpg",
+    "title": "Mink cushions at Saga Furs",
+    "creator": "Vadeve",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mink_cushions_at_Saga_Furs.jpg",
+    "width": 2148,
+    "height": 1755,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Hand-knitted_cushions_for_kneeling_down_for_prayer_in_church._%2851416435809%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Hand-knitted_cushions_for_kneeling_down_for_prayer_in_church._%2851416435809%29.jpg/1280px-Hand-knitted_cushions_for_kneeling_down_for_prayer_in_church._%2851416435809%29.jpg",
+    "title": "Hand-knitted cushions for kneeling down for prayer in church. (51416435809)",
+    "creator": "Ralf Steinberger",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hand-knitted_cushions_for_kneeling_down_for_prayer_in_church._(51416435809).jpg",
+    "width": 5699,
+    "height": 3792,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Coix%C3%AD_-_Aurora_Guti%C3%A9rrez_Larraya.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/6/61/Coix%C3%AD_-_Aurora_Guti%C3%A9rrez_Larraya.jpg",
+    "title": "Coixí - Aurora Gutiérrez Larraya",
+    "creator": "Aurora Gutiérrez Larraya",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coix%C3%AD_-_Aurora_Guti%C3%A9rrez_Larraya.jpg",
+    "width": 1059,
+    "height": 660,
+    "provider": "wikimedia"
+   }
+  ],
+  "Storage baskets": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/1950s_Wicker_Woven_Musical_Sewing_Basket_-_ivorybird_%2812398155865%29.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/1950s_Wicker_Woven_Musical_Sewing_Basket_-_ivorybird_%2812398155865%29.jpg",
+    "title": "1950s Wicker Woven Musical Sewing Basket - ivorybird (12398155865)",
+    "creator": "Wicker Paradise",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:1950s_Wicker_Woven_Musical_Sewing_Basket_-_ivorybird_(12398155865).jpg",
+    "width": 1209,
+    "height": 1040,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/White_currants_in_basket_2020_G1.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/White_currants_in_basket_2020_G1.jpg/1280px-White_currants_in_basket_2020_G1.jpg",
+    "title": "White currants in basket 2020 G1",
+    "creator": "George Chernilevsky",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:White_currants_in_basket_2020_G1.jpg",
+    "width": 3900,
+    "height": 3900,
+    "provider": "wikimedia"
+   }
+  ],
+  "Linen shirt": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Shirt%2C_man%27s_%28AM_1737-2%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Shirt%2C_man%27s_%28AM_1737-2%29.jpg/1280px-Shirt%2C_man%27s_%28AM_1737-2%29.jpg",
+    "title": "Shirt, man's",
+    "creator": "Unknown author",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shirt,_man%27s_(AM_1737-2).jpg",
+    "width": 1944,
+    "height": 2592,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/59/Shirt%2C_man%27s_%28AM_1737-1%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Shirt%2C_man%27s_%28AM_1737-1%29.jpg/1280px-Shirt%2C_man%27s_%28AM_1737-1%29.jpg",
+    "title": "Shirt, man's",
+    "creator": "Unknown author",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Shirt,_man%27s_(AM_1737-1).jpg",
+    "width": 1944,
+    "height": 2592,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://live.staticflickr.com/8344/8227708355_41aaa49160_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/8344/8227708355_41aaa49160_b.jpg",
+    "title": "Tuxedo shirt collar",
+    "creator": "Menswear Market",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/85546319@N04/8227708355",
+    "width": 1024,
+    "height": 683,
+    "provider": "flickr"
+   }
+  ],
+  "Denim jacket": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Denim_Jacket_%2851079649933%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/10/Denim_Jacket_%2851079649933%29.jpg/1280px-Denim_Jacket_%2851079649933%29.jpg",
+    "title": "Denim Jacket (51079649933)",
+    "creator": "ajay_suresh",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Denim_Jacket_(51079649933).jpg",
+    "width": 5184,
+    "height": 3888,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Jean_jacket.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Jean_jacket.jpg/1280px-Jean_jacket.jpg",
+    "title": "Jean jacket",
+    "creator": "NikosLikomitros",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Jean_jacket.jpg",
+    "width": 2520,
+    "height": 2250,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Worn_Tender_Co._denim_jacket.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/5/51/Worn_Tender_Co._denim_jacket.jpg",
+    "title": "Worn Tender Co. denim jacket",
+    "creator": "Dma132",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Worn_Tender_Co._denim_jacket.jpg",
+    "width": 1280,
+    "height": 956,
+    "provider": "wikimedia"
+   }
+  ],
+  "Silk scarf": [
+   {
+    "url": "https://live.staticflickr.com/8376/8479437031_378f3bf32d_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/8376/8479437031_378f3bf32d_b.jpg",
+    "title": "Eri Silk Scarf, Mocha--$40",
+    "creator": "Fair Trade Designs",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/80459994@N05/8479437031",
+    "width": 1024,
+    "height": 768,
+    "provider": "flickr"
+   },
+   {
+    "url": "https://live.staticflickr.com/8109/8480531584_f38ecd1039_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/8109/8480531584_f38ecd1039_b.jpg",
+    "title": "Eri Silk Scarf, Pink & Brown--$40",
+    "creator": "Fair Trade Designs",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/80459994@N05/8480531584",
+    "width": 1024,
+    "height": 851,
+    "provider": "flickr"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Scarf_MET_CP228_CP4.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Scarf_MET_CP228_CP4.jpg/1280px-Scarf_MET_CP228_CP4.jpg",
+    "title": "Scarf",
+    "creator": "Creator:Echo Scarfs",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Scarf_MET_CP228_CP4.jpg",
+    "width": 4000,
+    "height": 3993,
+    "provider": "wikimedia"
+   }
+  ],
+  "Sneakers": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Spoon_on_Sneakers_in_1980s.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Spoon_on_Sneakers_in_1980s.jpg",
+    "title": "Spoon on Sneakers in 1980s",
+    "creator": "Researcher for Spoon on Sneakers, who is my friend.",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Spoon_on_Sneakers_in_1980s.jpg",
+    "width": 937,
+    "height": 702,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/60/Panam_Bota_Meztli.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Panam_Bota_Meztli.jpg/1280px-Panam_Bota_Meztli.jpg",
+    "title": "Panam Bota Meztli",
+    "creator": "LeDroider",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panam_Bota_Meztli.jpg",
+    "width": 1440,
+    "height": 1078,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Nike_Terminator.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Nike_Terminator.jpg/1280px-Nike_Terminator.jpg",
+    "title": "Nike Terminator",
+    "creator": "LeDroider",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nike_Terminator.jpg",
+    "width": 3024,
+    "height": 3154,
+    "provider": "wikimedia"
+   }
+  ],
+  "Leather wallet": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Wallet_%28AM_2004.5.7-6%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Wallet_%28AM_2004.5.7-6%29.jpg/1280px-Wallet_%28AM_2004.5.7-6%29.jpg",
+    "title": "Wallet",
+    "creator": "Unknown author",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Wallet_(AM_2004.5.7-6).jpg",
+    "width": 1446,
+    "height": 1935,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/ZNAP_Kartenetui_%28Slimpuro%29_05.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/ZNAP_Kartenetui_%28Slimpuro%29_05.jpg/1280px-ZNAP_Kartenetui_%28Slimpuro%29_05.jpg",
+    "title": "ZNAP Kartenetui (Slimpuro) 05",
+    "creator": "www.kartenetui.info",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:ZNAP_Kartenetui_(Slimpuro)_05.jpg",
+    "width": 2016,
+    "height": 1512,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://live.staticflickr.com/8387/8474470011_77fb606656_b.jpg",
+    "downloadUrl": "https://live.staticflickr.com/8387/8474470011_77fb606656_b.jpg",
+    "title": "Carbon/Leather Wallets",
+    "creator": "kemeko1971",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+    "sourceUrl": "https://www.flickr.com/photos/8868801@N03/8474470011",
+    "width": 1024,
+    "height": 768,
+    "provider": "flickr"
+   }
+  ],
+  "Kurta set": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Kurta%2C_India%2C_20th_century%2C_cotton_blend_-_Saint_Ignatius_Church%2C_San_Francisco%2C_CA_-_DSC02637.JPG",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Kurta%2C_India%2C_20th_century%2C_cotton_blend_-_Saint_Ignatius_Church%2C_San_Francisco%2C_CA_-_DSC02637.JPG/1280px-Kurta%2C_India%2C_20th_century%2C_cotton_blend_-_Saint_Ignatius_Church%2C_San_Francisco%2C_CA_-_DSC02637.JPG",
+    "title": "Kurta, India, 20th century, cotton blend - Saint Ignatius Church, San Francisco, CA - DSC02637",
+    "creator": "Wikimedia Commons contributor",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kurta,_India,_20th_century,_cotton_blend_-_Saint_Ignatius_Church,_San_Francisco,_CA_-_DSC02637.JPG",
+    "width": 3648,
+    "height": 5472,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Kurta_closeup_sandalwood_buttons.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Kurta_closeup_sandalwood_buttons.jpg/1280px-Kurta_closeup_sandalwood_buttons.jpg",
+    "title": "Kurta closeup sandalwood buttons",
+    "creator": "Fowler&fowler at English Wikipedia",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kurta_closeup_sandalwood_buttons.jpg",
+    "width": 1690,
+    "height": 1111,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Kurta_closeup_side_open_knot2.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Kurta_closeup_side_open_knot2.jpg",
+    "title": "Kurta closeup side open knot2",
+    "creator": "Wikimedia Commons contributor",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Kurta_closeup_side_open_knot2.jpg",
+    "width": 987,
+    "height": 655,
+    "provider": "wikimedia"
+   }
+  ],
+  "Masala chai 500 g": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Masala_Chai.JPG",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/04/Masala_Chai.JPG/1280px-Masala_Chai.JPG",
+    "title": "Masala Chai",
+    "creator": "Miansari66",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Masala_Chai.JPG",
+    "width": 2816,
+    "height": 2112,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/A_cup_of_chai.JPG",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cb/A_cup_of_chai.JPG",
+    "title": "A cup of chai",
+    "creator": "Original uploader was Pratheepps at en.wikipedia",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_cup_of_chai.JPG",
+    "width": 1280,
+    "height": 960,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Chai_latte_%28before_straining%29_-_ease_2025-08-29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Chai_latte_%28before_straining%29_-_ease_2025-08-29.jpg/1280px-Chai_latte_%28before_straining%29_-_ease_2025-08-29.jpg",
+    "title": "Chai latte (before straining) - ease 2025-08-29",
+    "creator": "Andy Li",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chai_latte_(before_straining)_-_ease_2025-08-29.jpg",
+    "width": 8160,
+    "height": 6144,
+    "provider": "wikimedia"
+   }
+  ],
+  "Organic honey": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Small_Honey_Jar_with_Honeycomb.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Small_Honey_Jar_with_Honeycomb.jpg/1280px-Small_Honey_Jar_with_Honeycomb.jpg",
+    "title": "Small Honey Jar with Honeycomb",
+    "creator": "Alabama Extension",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Small_Honey_Jar_with_Honeycomb.jpg",
+    "width": 2738,
+    "height": 1825,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg/1280px-Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg",
+    "title": "Small Honey Jar with Honeycomb - 51331363379",
+    "creator": "Alabama Extension",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Small_Honey_Jar_with_Honeycomb_-_51331363379.jpg",
+    "width": 2738,
+    "height": 1825,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Small_Honey_Jar_with_Honeycomb_-_51329904367.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Small_Honey_Jar_with_Honeycomb_-_51329904367.jpg/1280px-Small_Honey_Jar_with_Honeycomb_-_51329904367.jpg",
+    "title": "Small Honey Jar with Honeycomb - 51329904367",
+    "creator": "Alabama Extension",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Small_Honey_Jar_with_Honeycomb_-_51329904367.jpg",
+    "width": 2738,
+    "height": 1825,
+    "provider": "wikimedia"
+   }
+  ],
+  "Basmati rice 5 kg": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Basmati_Rice_Kolkata_2011-02-11_1054.JPG",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Basmati_Rice_Kolkata_2011-02-11_1054.JPG/1280px-Basmati_Rice_Kolkata_2011-02-11_1054.JPG",
+    "title": "Basmati Rice Kolkata 2011-02-11 1054",
+    "creator": "Biswarup Ganguly",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Basmati_Rice_Kolkata_2011-02-11_1054.JPG",
+    "width": 4288,
+    "height": 2848,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Basmati_Rice_%2849683600583%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Basmati_Rice_%2849683600583%29.jpg/1280px-Basmati_Rice_%2849683600583%29.jpg",
+    "title": "Basmati Rice (49683600583)",
+    "creator": "Ajay Suresh from New York, NY, USA",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Basmati_Rice_(49683600583).jpg",
+    "width": 5184,
+    "height": 2916,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Basmati_Rice_India%2C_raw.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/Basmati_Rice_India%2C_raw.jpg/1280px-Basmati_Rice_India%2C_raw.jpg",
+    "title": "Basmati Rice India, raw",
+    "creator": "cookbookman17",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Basmati_Rice_India,_raw.jpg",
+    "width": 3872,
+    "height": 2592,
+    "provider": "wikimedia"
+   }
+  ],
+  "Cold-pressed oil": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Olive_oil_bottle_Bertolli_Riserva_Premium.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Olive_oil_bottle_Bertolli_Riserva_Premium.jpg/1280px-Olive_oil_bottle_Bertolli_Riserva_Premium.jpg",
+    "title": "Olive oil bottle Bertolli Riserva Premium",
+    "creator": "Badagnani",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Olive_oil_bottle_Bertolli_Riserva_Premium.jpg",
+    "width": 1536,
+    "height": 2048,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/da/9129Processing_and_cooking_of_coconut_healing_oil_in_the_Philippines_04.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/9129Processing_and_cooking_of_coconut_healing_oil_in_the_Philippines_04.jpg/1280px-9129Processing_and_cooking_of_coconut_healing_oil_in_the_Philippines_04.jpg",
+    "title": "9129Processing and cooking of coconut healing oil in the Philippines 04",
+    "creator": "Judgefloro",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:9129Processing_and_cooking_of_coconut_healing_oil_in_the_Philippines_04.jpg",
+    "width": 4608,
+    "height": 3456,
+    "provider": "wikimedia"
+   }
+  ],
+  "Dry fruit box": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Bowl_of_Cashews_and_Almonds_%2848140118636%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Bowl_of_Cashews_and_Almonds_%2848140118636%29.jpg/1280px-Bowl_of_Cashews_and_Almonds_%2848140118636%29.jpg",
+    "title": "Bowl of Cashews and Almonds (48140118636)",
+    "creator": "NIAID",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bowl_of_Cashews_and_Almonds_(48140118636).jpg",
+    "width": 3264,
+    "height": 2448,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Trail_Mix_Mountain_Man_dark_chocolate_chips_dried_cranberries_almonds_cashews_sunflower_seeds_snack_treat_%2827818930504%29.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Trail_Mix_Mountain_Man_dark_chocolate_chips_dried_cranberries_almonds_cashews_sunflower_seeds_snack_treat_%2827818930504%29.jpg",
+    "title": "Trail Mix Mountain Man dark chocolate chips dried cranberries almonds cashews sunflower seeds snack treat (27818930504)",
+    "creator": "Personal Creations",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Trail_Mix_Mountain_Man_dark_chocolate_chips_dried_cranberries_almonds_cashews_sunflower_seeds_snack_treat_(27818930504).jpg",
+    "width": 1024,
+    "height": 683,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Walnuts_pistachios_cashew_almonds.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Walnuts_pistachios_cashew_almonds.jpg/1280px-Walnuts_pistachios_cashew_almonds.jpg",
+    "title": "Walnuts pistachios cashew almonds",
+    "creator": "piviso.com",
+    "license": "CC0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Walnuts_pistachios_cashew_almonds.jpg",
+    "width": 3978,
+    "height": 2711,
+    "provider": "wikimedia"
+   }
+  ],
+  "Lipstick": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/DiorLippenstift.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/DiorLippenstift.jpg",
+    "title": "DiorLippenstift",
+    "creator": "Sjr",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:DiorLippenstift.jpg",
+    "width": 1275,
+    "height": 1169,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/DifferentColorsOfLipsticks.JPG",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/DifferentColorsOfLipsticks.JPG/1280px-DifferentColorsOfLipsticks.JPG",
+    "title": "DifferentColorsOfLipsticks",
+    "creator": "Raysonho @ Open Grid Scheduler / Grid Engine",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:DifferentColorsOfLipsticks.JPG",
+    "width": 4928,
+    "height": 3264,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Lipstick-_My_top_5%21_-_18072840654.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Lipstick-_My_top_5%21_-_18072840654.jpg/1280px-Lipstick-_My_top_5%21_-_18072840654.jpg",
+    "title": "Lipstick- My top 5! - 18072840654",
+    "creator": "Vanilla and lace",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lipstick-_My_top_5!_-_18072840654.jpg",
+    "width": 1500,
+    "height": 1000,
+    "provider": "wikimedia"
+   }
+  ],
+  "Perfume": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Perfume_Bottle_MET_DP242904.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Perfume_Bottle_MET_DP242904.jpg/1280px-Perfume_Bottle_MET_DP242904.jpg",
+    "title": "Perfume Bottle",
+    "creator": "The Metropolitan Museum of Art",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Perfume_Bottle_MET_DP242904.jpg",
+    "width": 3000,
+    "height": 4000,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Perfume_Bottle_MET_47.90.97B.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Perfume_Bottle_MET_47.90.97B.jpg",
+    "title": "Perfume Bottle",
+    "creator": "The Metropolitan Museum of Art",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Perfume_Bottle_MET_47.90.97B.jpg",
+    "width": 1215,
+    "height": 1225,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a1/Bottle%2C_Scent_%2848708722723%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Bottle%2C_Scent_%2848708722723%29.jpg/1280px-Bottle%2C_Scent_%2848708722723%29.jpg",
+    "title": "Bottle, Scent (48708722723)",
+    "creator": "Auckland Museum Collections",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bottle,_Scent_(48708722723).jpg",
+    "width": 8688,
+    "height": 5792,
+    "provider": "wikimedia"
+   }
+  ],
+  "Nail polish": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Two_bottles_of_nail_polish.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Two_bottles_of_nail_polish.jpg",
+    "title": "Two bottles of nail polish",
+    "creator": "JD Hancock",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Two_bottles_of_nail_polish.jpg",
+    "width": 1000,
+    "height": 898,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/Glitter_nail_polish_bottle.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b2/Glitter_nail_polish_bottle.jpg/1280px-Glitter_nail_polish_bottle.jpg",
+    "title": "Glitter nail polish bottle",
+    "creator": "Romina Campos",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Glitter_nail_polish_bottle.jpg",
+    "width": 2466,
+    "height": 1644,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/97/Nail_Polish_bottles_%282%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Nail_Polish_bottles_%282%29.jpg/1280px-Nail_Polish_bottles_%282%29.jpg",
+    "title": "Nail Polish bottles (2)",
+    "creator": "Joe Shlabotnik",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Nail_Polish_bottles_(2).jpg",
+    "width": 3872,
+    "height": 2592,
+    "provider": "wikimedia"
+   }
+  ],
+  "Makeup brush set": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Make-up_brushes_%28Unsplash%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Make-up_brushes_%28Unsplash%29.jpg/1280px-Make-up_brushes_%28Unsplash%29.jpg",
+    "title": "Make-up brushes (Unsplash)",
+    "creator": "Oli Dale olidale",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Make-up_brushes_(Unsplash).jpg",
+    "width": 5472,
+    "height": 3648,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Full_Set_of_Make_Up_Brushes_on_Blue_%26_White_Background_-_50922295762.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/93/Full_Set_of_Make_Up_Brushes_on_Blue_%26_White_Background_-_50922295762.jpg/1280px-Full_Set_of_Make_Up_Brushes_on_Blue_%26_White_Background_-_50922295762.jpg",
+    "title": "Full Set of Make Up Brushes on Blue & White Background - 50922295762",
+    "creator": "geehairimages",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Full_Set_of_Make_Up_Brushes_on_Blue_%26_White_Background_-_50922295762.jpg",
+    "width": 4000,
+    "height": 2667,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Set_of_Make_Up_Brushes_on_Marble_Background_-_50900414933.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Set_of_Make_Up_Brushes_on_Marble_Background_-_50900414933.jpg/1280px-Set_of_Make_Up_Brushes_on_Marble_Background_-_50900414933.jpg",
+    "title": "Set of Make Up Brushes on Marble Background - 50900414933",
+    "creator": "geehairimages",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Set_of_Make_Up_Brushes_on_Marble_Background_-_50900414933.jpg",
+    "width": 4000,
+    "height": 2667,
+    "provider": "wikimedia"
+   }
+  ],
+  "Handmade soap": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4c/Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg/1280px-Bars_of_pure_Marseille_and_Aleppo_soap%2C_2024.jpg",
+    "title": "Bars of pure Marseille and Aleppo soap, 2024",
+    "creator": "DimiTalen",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bars_of_pure_Marseille_and_Aleppo_soap,_2024.jpg",
+    "width": 5276,
+    "height": 3508,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Handmade_soap_cropped_and_simplified.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Handmade_soap_cropped_and_simplified.jpg",
+    "title": "Handmade soap cropped and simplified",
+    "creator": "Malene Thyssen, simplified by HLHJ",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Handmade_soap_cropped_and_simplified.jpg",
+    "width": 1131,
+    "height": 972,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Pexels-pixabay-206299.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Pexels-pixabay-206299.jpg/1280px-Pexels-pixabay-206299.jpg",
+    "title": "Pexels-pixabay-206299",
+    "creator": "Couleur",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pexels-pixabay-206299.jpg",
+    "width": 4896,
+    "height": 3264,
+    "provider": "wikimedia"
+   }
+  ],
+  "Compact powder": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Tangee_Face_Powder_-_DPLA_-_08da22f42f776a4e1ac3b9da29f5097e_%28page_1%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Tangee_Face_Powder_-_DPLA_-_08da22f42f776a4e1ac3b9da29f5097e_%28page_1%29.jpg/1280px-Tangee_Face_Powder_-_DPLA_-_08da22f42f776a4e1ac3b9da29f5097e_%28page_1%29.jpg",
+    "title": "Tangee Face Powder",
+    "creator": "George W. Luft Co",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tangee_Face_Powder_-_DPLA_-_08da22f42f776a4e1ac3b9da29f5097e_(page_1).jpg",
+    "width": 3186,
+    "height": 2280,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Tangee_Face_Powder_-_DPLA_-_08da22f42f776a4e1ac3b9da29f5097e_%28page_3%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Tangee_Face_Powder_-_DPLA_-_08da22f42f776a4e1ac3b9da29f5097e_%28page_3%29.jpg/1280px-Tangee_Face_Powder_-_DPLA_-_08da22f42f776a4e1ac3b9da29f5097e_%28page_3%29.jpg",
+    "title": "Tangee Face Powder",
+    "creator": "George W. Luft Co",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tangee_Face_Powder_-_DPLA_-_08da22f42f776a4e1ac3b9da29f5097e_(page_3).jpg",
+    "width": 3186,
+    "height": 2280,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Compact%2C_powder_%28AM_1995.202.34-2%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/Compact%2C_powder_%28AM_1995.202.34-2%29.jpg/1280px-Compact%2C_powder_%28AM_1995.202.34-2%29.jpg",
+    "title": "Compact, powder",
+    "creator": "Coty",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Compact,_powder_(AM_1995.202.34-2).jpg",
+    "width": 2592,
+    "height": 1944,
+    "provider": "wikimedia"
+   }
+  ],
+  "Monsoon Stories — short story collection": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Blank_book_on_a_table.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/2/21/Blank_book_on_a_table.jpg",
+    "title": "Blank book on a table",
+    "creator": "Trey Jones",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blank_book_on_a_table.jpg",
+    "width": 1200,
+    "height": 1200,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/83/Book_missing_back_cover.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Book_missing_back_cover.jpg/1280px-Book_missing_back_cover.jpg",
+    "title": "Book missing back cover",
+    "creator": "Packer1028",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Book_missing_back_cover.jpg",
+    "width": 3753,
+    "height": 2252,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Three_1928_editions_of_Sonnets_to_Craig_by_George_Sterling%2C_center_paperback_and_2_hardcovers.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Three_1928_editions_of_Sonnets_to_Craig_by_George_Sterling%2C_center_paperback_and_2_hardcovers.jpg/1280px-Three_1928_editions_of_Sonnets_to_Craig_by_George_Sterling%2C_center_paperback_and_2_hardcovers.jpg",
+    "title": "Three 1928 editions of Sonnets to Craig by George Sterling, center paperback and 2 hardcovers",
+    "creator": "Vinceemery",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Three_1928_editions_of_Sonnets_to_Craig_by_George_Sterling,_center_paperback_and_2_hardcovers.jpg",
+    "width": 3892,
+    "height": 2044,
+    "provider": "wikimedia"
+   }
+  ],
+  "Everyday cookbook": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/96/100_recepten_van_het_oorlogskeukenboek.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/100_recepten_van_het_oorlogskeukenboek.jpg/1280px-100_recepten_van_het_oorlogskeukenboek.jpg",
+    "title": "100 recepten van het oorlogskeukenboek",
+    "creator": "Unknown author",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:100_recepten_van_het_oorlogskeukenboek.jpg",
+    "width": 1864,
+    "height": 2259,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Picayune_Creole_Cookbook_cover_1900.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Picayune_Creole_Cookbook_cover_1900.jpg",
+    "title": "Picayune Creole Cookbook cover 1900",
+    "creator": "Unknown author",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Picayune_Creole_Cookbook_cover_1900.jpg",
+    "width": 838,
+    "height": 1192,
+    "provider": "wikimedia"
+   }
+  ],
+  "Pop-up picture book": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Picture_Book%2C_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_%28page_2%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Picture_Book%2C_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_%28page_2%29.jpg/1280px-Picture_Book%2C_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_%28page_2%29.jpg",
+    "title": "Picture Book, \"Cinderella\"",
+    "creator": "McLoughlin Bros",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Picture_Book,_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_(page_2).jpg",
+    "width": 8688,
+    "height": 5792,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Picture_Book%2C_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_%28page_3%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Picture_Book%2C_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_%28page_3%29.jpg/1280px-Picture_Book%2C_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_%28page_3%29.jpg",
+    "title": "Picture Book, \"Cinderella\"",
+    "creator": "McLoughlin Bros",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Picture_Book,_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_(page_3).jpg",
+    "width": 8688,
+    "height": 5792,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Picture_Book%2C_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_%28page_1%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Picture_Book%2C_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_%28page_1%29.jpg/1280px-Picture_Book%2C_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_%28page_1%29.jpg",
+    "title": "Picture Book, \"Cinderella\"",
+    "creator": "McLoughlin Bros",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Picture_Book,_%22Cinderella%22_-_DPLA_-_a65aa87265a21eb7ce0c6e5bc8a00cac_(page_1).jpg",
+    "width": 5494,
+    "height": 8241,
+    "provider": "wikimedia"
+   }
+  ],
+  "Classic comics collection": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Captain_Easy_Comic_Books.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Captain_Easy_Comic_Books.jpg",
+    "title": "Captain Easy Comic Books",
+    "creator": "Unknown author",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Captain_Easy_Comic_Books.jpg",
+    "width": 1074,
+    "height": 900,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Buster_Brown_Comic_Book_35.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Buster_Brown_Comic_Book_35.jpg",
+    "title": "Buster Brown Comic Book 35",
+    "creator": "Unknown author",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Buster_Brown_Comic_Book_35.jpg",
+    "width": 940,
+    "height": 1400,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Funny_Book_Magazine_-_Issue_7_%28January-Feburary_1946%29_-_Front_Cover.jpg",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/6/69/Funny_Book_Magazine_-_Issue_7_%28January-Feburary_1946%29_-_Front_Cover.jpg",
+    "title": "Funny Book Magazine - Issue 7 (January-Feburary 1946) - Front Cover",
+    "creator": "Funny Book Publishing",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Funny_Book_Magazine_-_Issue_7_(January-Feburary_1946)_-_Front_Cover.jpg",
+    "width": 995,
+    "height": 1421,
+    "provider": "wikimedia"
+   }
+  ],
+  "Poems of the Rain — poetry collection": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/French_-_Leaf_from_Alphabet_Book_-_Walters_W20010R_-_Open_Obverse.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/French_-_Leaf_from_Alphabet_Book_-_Walters_W20010R_-_Open_Obverse.jpg/1280px-French_-_Leaf_from_Alphabet_Book_-_Walters_W20010R_-_Open_Obverse.jpg",
+    "title": "Leaf from Alphabet Book",
+    "creator": "Anonymous (France)Unknown author",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:French_-_Leaf_from_Alphabet_Book_-_Walters_W20010R_-_Open_Obverse.jpg",
+    "width": 1301,
+    "height": 1799,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/French_-_Leaf_from_Alphabet_Book_-_Walters_W20014R_-_Open_Obverse.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/French_-_Leaf_from_Alphabet_Book_-_Walters_W20014R_-_Open_Obverse.jpg/1280px-French_-_Leaf_from_Alphabet_Book_-_Walters_W20014R_-_Open_Obverse.jpg",
+    "title": "Leaf from Alphabet Book",
+    "creator": "Anonymous (France)Unknown author",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:French_-_Leaf_from_Alphabet_Book_-_Walters_W20014R_-_Open_Obverse.jpg",
+    "width": 1301,
+    "height": 1799,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/30/French_-_Leaf_from_Alphabet_Book_-_Walters_W20015V_-_Open_Reverse.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/French_-_Leaf_from_Alphabet_Book_-_Walters_W20015V_-_Open_Reverse.jpg/1280px-French_-_Leaf_from_Alphabet_Book_-_Walters_W20015V_-_Open_Reverse.jpg",
+    "title": "Leaf from Alphabet Book",
+    "creator": "Anonymous (France)Unknown author",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:French_-_Leaf_from_Alphabet_Book_-_Walters_W20015V_-_Open_Reverse.jpg",
+    "width": 1296,
+    "height": 1800,
+    "provider": "wikimedia"
+   }
+  ],
+  "World atlas": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Atlas_3.png",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Atlas_3.png",
+    "title": "Latin: Speculum orbis terrae Speculum Orbis Terraetitle QS:P1476,la:\"Speculum orbis terrae \"label QS:Lla,\"Speculum orbis",
+    "creator": "Cornelis de Jode",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Atlas_3.png",
+    "width": 1200,
+    "height": 900,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/19/Atlas_4.png",
+    "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Atlas_4.png",
+    "title": "Latin: Speculum orbis terrae Speculum Orbis Terraetitle QS:P1476,la:\"Speculum orbis terrae \"label QS:Lla,\"Speculum orbis",
+    "creator": "Cornelis de Jode",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Atlas_4.png",
+    "width": 1200,
+    "height": 900,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/Atlas_of_Madison_County%2C_Iowa_LOC_2007626774-1.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/61/Atlas_of_Madison_County%2C_Iowa_LOC_2007626774-1.jpg/1280px-Atlas_of_Madison_County%2C_Iowa_LOC_2007626774-1.jpg",
+    "title": "Atlas of Madison County, Iowa LOC 2007626774-1",
+    "creator": "Midland Map Company (Knoxville, Iowa)",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Atlas_of_Madison_County,_Iowa_LOC_2007626774-1.jpg",
+    "width": 2194,
+    "height": 2767,
+    "provider": "wikimedia"
+   }
+  ],
+  "Silver earrings": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Elegant_silver_and_pewter_earrings.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Elegant_silver_and_pewter_earrings.jpg/1280px-Elegant_silver_and_pewter_earrings.jpg",
+    "title": "Elegant silver and pewter earrings",
+    "creator": "Heather",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Elegant_silver_and_pewter_earrings.jpg",
+    "width": 2775,
+    "height": 1990,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Palestinian_handmade_silver_earrings_featuring_old_coins.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5b/Palestinian_handmade_silver_earrings_featuring_old_coins.jpg/1280px-Palestinian_handmade_silver_earrings_featuring_old_coins.jpg",
+    "title": "Palestinian handmade silver earrings featuring old coins",
+    "creator": "TracesPalestine",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Palestinian_handmade_silver_earrings_featuring_old_coins.jpg",
+    "width": 2017,
+    "height": 2107,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Mongol_Silver_Earrings_%2819171888964%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Mongol_Silver_Earrings_%2819171888964%29.jpg/1280px-Mongol_Silver_Earrings_%2819171888964%29.jpg",
+    "title": "Mongol Silver Earrings (19171888964)",
+    "creator": "Gary Todd from Xinzheng, China",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mongol_Silver_Earrings_(19171888964).jpg",
+    "width": 3456,
+    "height": 5184,
+    "provider": "wikimedia"
+   }
+  ],
+  "Gold-plated necklace": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/db/KHM_Wien_VIIb_133_-_Golden_Vandal_necklace%2C_c._300_AD.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/KHM_Wien_VIIb_133_-_Golden_Vandal_necklace%2C_c._300_AD.jpg/1280px-KHM_Wien_VIIb_133_-_Golden_Vandal_necklace%2C_c._300_AD.jpg",
+    "title": "KHM Wien VIIb 133 - Golden Vandal necklace, c. 300 AD",
+    "creator": "Unknown author",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:KHM_Wien_VIIb_133_-_Golden_Vandal_necklace,_c._300_AD.jpg",
+    "width": 1674,
+    "height": 1458,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Minoan_gold_necklace_archmus_Heraklion.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Minoan_gold_necklace_archmus_Heraklion.jpg/1280px-Minoan_gold_necklace_archmus_Heraklion.jpg",
+    "title": "Minoan gold necklace archmus Heraklion",
+    "creator": "Jebulon",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Minoan_gold_necklace_archmus_Heraklion.jpg",
+    "width": 3397,
+    "height": 2723,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Gold_necklace_MET_DP122704.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Gold_necklace_MET_DP122704.jpg/1280px-Gold_necklace_MET_DP122704.jpg",
+    "title": "Gold necklace",
+    "creator": "The Metropolitan Museum of Art",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gold_necklace_MET_DP122704.jpg",
+    "width": 3000,
+    "height": 4000,
+    "provider": "wikimedia"
+   }
+  ],
+  "Glass bangles": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f5/Bangles_%281129013157%29.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Bangles_%281129013157%29.jpg/1280px-Bangles_%281129013157%29.jpg",
+    "title": "Bangles (1129013157)",
+    "creator": "Garry Knight from London, England",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Bangles_(1129013157).jpg",
+    "width": 2816,
+    "height": 2112,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Silk_threads_bangles.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Silk_threads_bangles.jpg/1280px-Silk_threads_bangles.jpg",
+    "title": "Silk threads bangles",
+    "creator": "Darakshanehaluddin",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Silk_threads_bangles.jpg",
+    "width": 3060,
+    "height": 4080,
+    "provider": "wikimedia"
+   }
+  ],
+  "Silver ring": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Flat_silver_ring_with_a_triangular_faceted_garnet_1.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Flat_silver_ring_with_a_triangular_faceted_garnet_1.jpg/1280px-Flat_silver_ring_with_a_triangular_faceted_garnet_1.jpg",
+    "title": "Flat silver ring with a triangular faceted garnet 1",
+    "creator": "W.carter",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flat_silver_ring_with_a_triangular_faceted_garnet_1.jpg",
+    "width": 2683,
+    "height": 2683,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Flat_silver_ring_with_a_triangular_faceted_garnet_3.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Flat_silver_ring_with_a_triangular_faceted_garnet_3.jpg/1280px-Flat_silver_ring_with_a_triangular_faceted_garnet_3.jpg",
+    "title": "Flat silver ring with a triangular faceted garnet 3",
+    "creator": "W.carter",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flat_silver_ring_with_a_triangular_faceted_garnet_3.jpg",
+    "width": 2902,
+    "height": 2902,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Flat_silver_ring_with_a_triangular_faceted_garnet_4.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Flat_silver_ring_with_a_triangular_faceted_garnet_4.jpg/1280px-Flat_silver_ring_with_a_triangular_faceted_garnet_4.jpg",
+    "title": "Flat silver ring with a triangular faceted garnet 4",
+    "creator": "W.carter",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flat_silver_ring_with_a_triangular_faceted_garnet_4.jpg",
+    "width": 2902,
+    "height": 2902,
+    "provider": "wikimedia"
+   }
+  ],
+  "Pendant necklace": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Gold_Necklace_with_Pendants_MET_DP241637.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Gold_Necklace_with_Pendants_MET_DP241637.jpg/1280px-Gold_Necklace_with_Pendants_MET_DP241637.jpg",
+    "title": "Gold Necklace with Pendants",
+    "creator": "The Metropolitan Museum of Art",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gold_Necklace_with_Pendants_MET_DP241637.jpg",
+    "width": 2630,
+    "height": 3857,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Gold_Necklace_with_Pendants_MET_dp30692.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Gold_Necklace_with_Pendants_MET_dp30692.jpg/1280px-Gold_Necklace_with_Pendants_MET_dp30692.jpg",
+    "title": "Gold Necklace with Pendants",
+    "creator": "The Metropolitan Museum of Art",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gold_Necklace_with_Pendants_MET_dp30692.jpg",
+    "width": 1871,
+    "height": 2021,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Gold_Necklace_with_Pendants_MET_sf17-190-1656s2.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Gold_Necklace_with_Pendants_MET_sf17-190-1656s2.jpg/1280px-Gold_Necklace_with_Pendants_MET_sf17-190-1656s2.jpg",
+    "title": "Gold Necklace with Pendants",
+    "creator": "The Metropolitan Museum of Art",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Gold_Necklace_with_Pendants_MET_sf17-190-1656s2.jpg",
+    "width": 1663,
+    "height": 1901,
+    "provider": "wikimedia"
+   }
+  ],
+  "Silver anklet": [
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Anklet_MET_DP100737.jpg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Anklet_MET_DP100737.jpg/1280px-Anklet_MET_DP100737.jpg",
+    "title": "Anklet",
+    "creator": "The Metropolitan Museum of Art",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anklet_MET_DP100737.jpg",
+    "width": 1868,
+    "height": 1696,
+    "provider": "wikimedia"
+   },
+   {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Anklet_MET_15.95.24%281%29.jpeg",
+    "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Anklet_MET_15.95.24%281%29.jpeg/1280px-Anklet_MET_15.95.24%281%29.jpeg",
+    "title": "Anklet",
+    "creator": "The Metropolitan Museum of Art",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Anklet_MET_15.95.24(1).jpeg",
+    "width": 2048,
+    "height": 1536,
+    "provider": "wikimedia"
+   }
+  ]
+ },
+ "categories": {
+  "outdoor": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Camping_on_Kesugi_Ridge._Denali_State_Park%2C_Alaska_%2828355161722%29.jpg",
+   "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Camping_on_Kesugi_Ridge._Denali_State_Park%2C_Alaska_%2828355161722%29.jpg/1280px-Camping_on_Kesugi_Ridge._Denali_State_Park%2C_Alaska_%2828355161722%29.jpg",
+   "title": "Camping on Kesugi Ridge. Denali State Park, Alaska (28355161722)",
+   "creator": "Paxson Woelber",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Camping_on_Kesugi_Ridge._Denali_State_Park,_Alaska_(28355161722).jpg",
+   "width": 5184,
+   "height": 3456,
+   "provider": "wikimedia"
+  },
+  "home": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Living_Room_Interior_Designer_-_Picker_Online.jpg",
+   "downloadUrl": "https://upload.wikimedia.org/wikipedia/commons/7/73/Living_Room_Interior_Designer_-_Picker_Online.jpg",
+   "title": "Living Room Interior Designer - Picker Online",
+   "creator": "Pixabay contributor",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Living_Room_Interior_Designer_-_Picker_Online.jpg",
+   "width": 1280,
+   "height": 1066,
+   "provider": "wikimedia"
+  },
+  "fashion": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/33/Clothing_Rack_of_Jeans.jpg",
+   "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Clothing_Rack_of_Jeans.jpg/1280px-Clothing_Rack_of_Jeans.jpg",
+   "title": "Clothing Rack of Jeans",
+   "creator": "Peter Griffin",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clothing_Rack_of_Jeans.jpg",
+   "width": 1920,
+   "height": 1272,
+   "provider": "wikimedia"
+  },
+  "grocery": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Indian_spices_for_sale_at_the_Anjuna_flea-market%2C_Anjuna_Beach%2C_Goa.jpg",
+   "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Indian_spices_for_sale_at_the_Anjuna_flea-market%2C_Anjuna_Beach%2C_Goa.jpg/1280px-Indian_spices_for_sale_at_the_Anjuna_flea-market%2C_Anjuna_Beach%2C_Goa.jpg",
+   "title": "Indian spices for sale at the Anjuna flea-market, Anjuna Beach, Goa",
+   "creator": "sara marlowe",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Indian_spices_for_sale_at_the_Anjuna_flea-market,_Anjuna_Beach,_Goa.jpg",
+   "width": 2600,
+   "height": 1740,
+   "provider": "wikimedia"
+  },
+  "beauty": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Cosmetics-1078712_1280.jpg",
+   "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Cosmetics-1078712_1280.jpg/1280px-Cosmetics-1078712_1280.jpg",
+   "title": "Cosmetics-1078712 1280",
+   "creator": "camillaperrucci",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cosmetics-1078712_1280.jpg",
+   "width": 2448,
+   "height": 2448,
+   "provider": "wikimedia"
+  },
+  "books": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Abbotsford_House_Study_Room.jpg",
+   "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Abbotsford_House_Study_Room.jpg/1280px-Abbotsford_House_Study_Room.jpg",
+   "title": "Abbotsford House Study Room",
+   "creator": "Michael D Beckwith",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Abbotsford_House_Study_Room.jpg",
+   "width": 8687,
+   "height": 5791,
+   "provider": "wikimedia"
+  },
+  "electronics": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Various_smartphones_-_Android%2C_Blackberry%2C_Windows_Phone%2C_and_iOS.jpg",
+   "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Various_smartphones_-_Android%2C_Blackberry%2C_Windows_Phone%2C_and_iOS.jpg/1280px-Various_smartphones_-_Android%2C_Blackberry%2C_Windows_Phone%2C_and_iOS.jpg",
+   "title": "Various smartphones - Android, Blackberry, Windows Phone, and iOS",
+   "creator": "Carlos Varela",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Various_smartphones_-_Android,_Blackberry,_Windows_Phone,_and_iOS.jpg",
+   "width": 1920,
+   "height": 1080,
+   "provider": "wikimedia"
+  },
+  "jewellery": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Necklace_MET_DP272894.jpg",
+   "downloadUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Necklace_MET_DP272894.jpg/1280px-Necklace_MET_DP272894.jpg",
+   "title": "Necklace",
+   "creator": "Creator:Dreicer & Co.",
+   "license": "CC0",
+   "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+   "sourceUrl": "https://commons.wikimedia.org/wiki/File:Necklace_MET_DP272894.jpg",
+   "width": 2553,
+   "height": 3872,
+   "provider": "wikimedia"
+  }
+ }
+}

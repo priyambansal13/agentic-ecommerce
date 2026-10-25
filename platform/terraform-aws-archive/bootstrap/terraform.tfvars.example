@@ -1,0 +1,2 @@
+region            = "ap-south-1"
+state_bucket_name = "agentic-commerce-tfstate-123456789012"

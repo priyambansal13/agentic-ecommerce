@@ -1,0 +1,16 @@
+{
+  "$comment": "k3s-in-Docker on a laptop (`ac k8s local up`) — same charts as prod, smaller volumes, local images ac/<name>:local",
+  "publicUrl": "http://localhost:8088",
+  "host": "",
+  "imageRegistry": "ac",
+  "defaultTag": "local",
+  "infra": {
+    "postgres": { "storage": "5Gi" },
+    "redpanda": { "storage": "2Gi" },
+    "opensearch": { "storage": "2Gi" },
+    "minio": { "storage": "2Gi" },
+    "backup": { "enabled": true, "storage": "2Gi" },
+    "observability": { "enabled": false }
+  },
+  "apps": {}
+}

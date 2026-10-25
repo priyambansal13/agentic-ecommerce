@@ -1,0 +1,20 @@
+# Public entry (Traefik): /api → edge (Kong) · / → shell zone (which rewrites /shop /account /seller /admin to
+# their zones internally). Keycloak's /auth Ingress lives in the infra chart.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: agentic-commerce
+  labels: { {{ include "ac.labels" . }} }
+  {{- with .Values.global.ingressAnnotations }}
+  annotations: {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  {{- with .Values.global.tls }}
+  tls: [{ hosts: [{{ $.Values.global.host | quote }}], secretName: {{ .secretName }} }]
+  {{- end }}
+  rules:
+    - {{- with .Values.global.host }} host: {{ . | quote }}{{ end }}
+      http:
+        paths:
+          - { path: /api, pathType: Prefix, backend: { service: { name: edge, port: { number: 8000 } } } }
+          - { path: /, pathType: Prefix, backend: { service: { name: zone-shell, port: { number: 3300 } } } }

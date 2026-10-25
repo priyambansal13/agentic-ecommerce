@@ -1,0 +1,48 @@
+{{- /* One Deployment + Service per micro-frontend zone. Service name zone-<name> = the URL baked into the
+       shell's rewrites at image build time (http://zone-<name>:<port>). Only the shell is exposed (Ingress). */}}
+{{- range $name, $z := .Values.zones }}
+{{- $app := merge (dict) $z $.Values.zoneDefaults }}
+---
+apiVersion: v1
+kind: Service
+metadata: { name: zone-{{ $name }}, labels: { app: zone-{{ $name }}, ac/tier: zone, {{ include "ac.labels" $ }} } }
+spec:
+  selector: { app: zone-{{ $name }} }
+  ports: [{ name: http, port: {{ $z.port }}, targetPort: {{ $z.port }} }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: zone-{{ $name }}, labels: { app: zone-{{ $name }}, ac/tier: zone, ac/owner: {{ $z.owner | default "unknown" }}, {{ include "ac.labels" $ }} } }
+spec:
+  replicas: {{ $app.replicas }}
+  revisionHistoryLimit: 5
+  strategy: { type: RollingUpdate, rollingUpdate: { maxUnavailable: 0, maxSurge: 1 } }
+  selector: { matchLabels: { app: zone-{{ $name }} } }
+  template:
+    metadata:
+      labels: { app: zone-{{ $name }}, ac/tier: zone, {{ include "ac.labels" $ }} }
+      annotations: { ac/secrets-version: {{ $.Values.global.secretsVersion | quote }} }
+    spec:
+      {{- with $.Values.global.imagePullSecrets }}
+      imagePullSecrets: [{{ range . }}{ name: {{ . }} }, {{ end }}]
+      {{- end }}
+      securityContext: { runAsUser: 1000, runAsGroup: 1000 }
+      containers:
+        - name: zone-{{ $name }}
+          image: {{ include "ac.image" (dict "root" $ "app" $z) }}
+          imagePullPolicy: {{ $.Values.global.imagePullPolicy }}
+          ports: [{ containerPort: {{ $z.port }} }]
+          env:
+            - { name: PORT, value: {{ $z.port | quote }} }
+            - { name: HOSTNAME, value: 0.0.0.0 }
+            - { name: KONG_URL, value: http://edge:8000 }
+            - { name: NEXT_PUBLIC_APP_URL, value: {{ $.Values.global.publicUrl | quote }} }
+          envFrom: [{ secretRef: { name: zone-{{ $name }}, optional: true } }]
+          readinessProbe: { httpGet: { path: {{ printf "%s/api/health" $z.basePath }}, port: {{ $z.port }} }, periodSeconds: 5 }
+          livenessProbe: { httpGet: { path: {{ printf "%s/api/health" $z.basePath }}, port: {{ $z.port }} }, initialDelaySeconds: 20, periodSeconds: 20 }
+          startupProbe: { httpGet: { path: {{ printf "%s/api/health" $z.basePath }}, port: {{ $z.port }} }, periodSeconds: 3, failureThreshold: 40 }
+          resources: {{- toYaml $app.resources | nindent 12 }}
+          {{- include "ac.containerSecurity" $ | nindent 10 }}
+          volumeMounts: [{ name: next-cache, mountPath: /app/apps/{{ $name }}/.next/cache }]
+      volumes: [{ name: next-cache, emptyDir: { sizeLimit: 256Mi } }]
+{{- end }}

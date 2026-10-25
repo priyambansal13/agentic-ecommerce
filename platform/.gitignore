@@ -1,0 +1,16 @@
+.env
+.env.*
+!.env.example
+# generated from backend service metadata by `ac kong` / `ac infra init`
+infra/kong/kong.yml
+infra/kong/kong.cloud.yml
+infra/kong/kong.k8s.yml
+node_modules/
+*.log
+.DS_Store
+deploy/envs/*.env
+deploy/envs/*.kubeconfig
+deploy/.local/
+deploy/terraform/oci/terraform.tfvars
+deploy/terraform/oci/.terraform/
+deploy/terraform/oci/*.tfstate*

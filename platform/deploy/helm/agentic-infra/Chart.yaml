@@ -1,0 +1,6 @@
+apiVersion: v2
+name: agentic-infra
+description: Stateful backing services for agentic-commerce on k3s (namespace ac-infra) — Postgres (database per service), Redis, Redpanda, OpenSearch, Keycloak, MinIO, observability, backups
+type: application
+version: 0.1.0
+appVersion: "2026.10"

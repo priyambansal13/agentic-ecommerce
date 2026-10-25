@@ -1,0 +1,37 @@
+name: release-libs
+
+# Versioned shared libraries (@ac/contracts, @ac/money) → GitHub Packages, consumed by the frontend repo.
+on:
+  push:
+    branches: [main]
+    paths: ['backend/libs/**', 'backend/.changeset/**']
+
+defaults:
+  run:
+    working-directory: backend
+
+permissions:
+  contents: write
+  packages: write
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { package_json_file: backend/package.json }
+      - uses: actions/setup-node@v4
+        with: { node-version-file: backend/.nvmrc, cache: pnpm, cache-dependency-path: backend/pnpm-lock.yaml }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec turbo run build --filter "./libs/*"
+      - uses: changesets/action@v1
+        with:
+          cwd: backend
+          version: pnpm libs:version
+          publish: pnpm libs:publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AC_REGISTRY: https://npm.pkg.github.com/
+          AC_REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}

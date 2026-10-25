@@ -1,0 +1,287 @@
+# Local infrastructure for agentic-commerce (platform repo).
+#   ac infra up                 core stack            (ac = node platform/scripts/ac.mjs)
+#   ac infra up --llmops        + Langfuse (LLM traces/evals)
+#   ac infra up --tools         + OpenSearch Dashboards
+# Host ports use the 5xxxx range so they don't clash with other local projects.
+# Microservices (backend repo) and micro-frontends (frontend repo) run on the host via `ac dev`;
+# Kong reaches the services via host.docker.internal. One Postgres container hosts a SEPARATE DATABASE
+# per service locally (ac_<db>, owner svc_<db>, CONNECT revoked from everyone else); in AWS they are
+# separate databases on Aurora (dedicated clusters for selected services).
+name: agentic-commerce
+
+x-restart: &restart
+  restart: unless-stopped
+
+services:
+  postgres:
+    <<: *restart
+    image: pgvector/pgvector:0.8.7-pg18
+    # tini as PID 1 reaps `docker exec` children (healthcheck pg_isready, ac psql). Without it they are reparented to
+    # the postmaster, and one killed by a healthcheck timeout or SIGPIPE counts as a crashed backend → Postgres resets
+    # every connection and runs crash recovery ("the database system is in recovery mode").
+    init: true
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?run pnpm ac configure}
+      POSTGRES_DB: postgres
+    ports: ["55432:5432"]
+    volumes:
+      - pg_data:/var/lib/postgresql
+      - ./postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  redis:
+    <<: *restart
+    image: redis:8.8
+    command: ["redis-server", "--requirepass", "${REDIS_PASSWORD:?run pnpm ac configure}", "--maxmemory-policy", "noeviction", "--appendonly", "yes"]
+    ports: ["56379:6379"]
+    volumes: [redis_data:/data]
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a \"$$REDIS_PASSWORD\" --no-auth-warning ping | grep PONG"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    environment:
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
+
+  redpanda:
+    <<: *restart
+    image: docker.redpanda.com/redpandadata/redpanda:v25.3.17
+    command:
+      - redpanda
+      - start
+      - --kafka-addr=internal://0.0.0.0:9092,external://0.0.0.0:19092
+      - --advertise-kafka-addr=internal://redpanda:9092,external://localhost:59092
+      - --schema-registry-addr=internal://0.0.0.0:8081,external://0.0.0.0:18081
+      - --rpc-addr=redpanda:33145
+      - --advertise-rpc-addr=redpanda:33145
+      - --mode=dev-container
+      - --smp=1
+      - --default-log-level=warn
+    ports: ["59092:19092", "58081:18081"]
+    volumes: [redpanda_data:/var/lib/redpanda/data]
+    healthcheck:
+      test: ["CMD-SHELL", "rpk cluster health | grep -E 'Healthy:.+true'"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  redpanda-console:
+    <<: *restart
+    image: docker.redpanda.com/redpandadata/console:v3.12.0
+    environment:
+      KAFKA_BROKERS: redpanda:9092
+      SCHEMAREGISTRY_ENABLED: "true"
+      SCHEMAREGISTRY_URLS: http://redpanda:8081
+    ports: ["58080:8080"]
+    depends_on:
+      redpanda: { condition: service_healthy }
+
+  opensearch:
+    <<: *restart
+    image: opensearchproject/opensearch:3.9.0
+    environment:
+      discovery.type: single-node
+      DISABLE_SECURITY_PLUGIN: "true"
+      DISABLE_INSTALL_DEMO_CONFIG: "true"
+      OPENSEARCH_JAVA_OPTS: -Xms512m -Xmx512m
+    ulimits:
+      memlock: { soft: -1, hard: -1 }
+      nofile: { soft: 65536, hard: 65536 }
+    ports: ["59200:9200"]
+    volumes: [opensearch_data:/usr/share/opensearch/data]
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fs http://localhost:9200/_cluster/health | grep -vq '\"status\":\"red\"'"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+  opensearch-dashboards:
+    <<: *restart
+    profiles: [tools]
+    image: opensearchproject/opensearch-dashboards:3.9.0
+    environment:
+      OPENSEARCH_HOSTS: '["http://opensearch:9200"]'
+      DISABLE_SECURITY_DASHBOARDS_PLUGIN: "true"
+    ports: ["55601:5601"]
+    depends_on:
+      opensearch: { condition: service_healthy }
+
+  keycloak:
+    <<: *restart
+    image: quay.io/keycloak/keycloak:26.8
+    command: ["start-dev", "--import-realm"]
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD:?run pnpm ac configure}
+      KC_HEALTH_ENABLED: "true"
+      KC_HTTP_PORT: "8080"
+    ports: ["58180:8080"]
+    volumes:
+      - ./keycloak:/opt/keycloak/data/import:ro
+      - keycloak_data:/opt/keycloak/data
+    healthcheck:
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/127.0.0.1/9000 && printf 'GET /health/ready HTTP/1.1\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && grep -q UP <&3"]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+  kong:
+    <<: *restart
+    image: kong:3.9.4
+    environment:
+      KONG_DATABASE: "off"
+      KONG_DECLARATIVE_CONFIG: /kong/kong.yml
+      KONG_PROXY_LISTEN: 0.0.0.0:8000
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001
+      KONG_PROXY_ACCESS_LOG: /dev/stdout
+      KONG_PROXY_ERROR_LOG: /dev/stderr
+    ports: ["58000:8000", "58001:8001"]
+    extra_hosts: ["host.docker.internal:host-gateway"]
+    volumes: ["./kong:/kong:ro"]
+    healthcheck:
+      test: ["CMD", "kong", "health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  opa:
+    <<: *restart
+    image: openpolicyagent/opa:1.21.3
+    command: ["run", "--server", "--addr=0.0.0.0:8181", "--log-level=info", "--watch", "/policies"]
+    ports: ["58181:8181"]
+    # policies are owned by the agents service team → they live in the backend repo
+    volumes: ["${AC_BACKEND_DIR:-../../backend}/policies:/policies:ro"]
+
+  minio:
+    <<: *restart
+    image: cgr.dev/chainguard/minio
+    entrypoint: sh
+    command: -c 'mkdir -p /data/product-images /data/return-evidence /data/audit /data/langfuse && minio server --address ":9000" --console-address ":9001" /data'
+    environment:
+      MINIO_ROOT_USER: minio
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:?run pnpm ac configure}
+    ports: ["59000:9000", "59001:9001"]
+    volumes: [minio_data:/data]
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # local npm registry for versioned shared libraries (@ac/contracts, @ac/money) published by the backend
+  # repo and consumed by the frontend repo — the same flow GitHub Packages provides in CI.
+  registry:
+    <<: *restart
+    image: verdaccio/verdaccio:6.10
+    ports: ["54873:4873"]
+    volumes:
+      - ./verdaccio/config.yaml:/verdaccio/conf/config.yaml:ro
+      - verdaccio_storage:/verdaccio/storage
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:4873/-/ping >/dev/null || exit 1"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  mailpit:
+    <<: *restart
+    image: axllent/mailpit:v1.31
+    ports: ["58025:8025", "51025:1025"]
+
+  lgtm:
+    <<: *restart
+    image: grafana/otel-lgtm:0.37.0
+    ports: ["53000:3000", "54317:4317", "54318:4318"]
+    volumes: [lgtm_data:/data]
+
+  # ---------- LLM ops (optional: pnpm ac infra up --llmops) ----------
+  clickhouse:
+    <<: *restart
+    profiles: [llmops]
+    image: clickhouse/clickhouse-server:25.12
+    user: "101:101"
+    environment:
+      CLICKHOUSE_DB: default
+      CLICKHOUSE_USER: clickhouse
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD:-clickhouse}
+    volumes: [clickhouse_data:/var/lib/clickhouse]
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:8123/ping || exit 1
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  langfuse-worker:
+    <<: *restart
+    profiles: [llmops]
+    image: docker.langfuse.com/langfuse/langfuse-worker:4
+    depends_on: &langfuse-deps
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+      minio: { condition: service_healthy }
+      clickhouse: { condition: service_healthy }
+    environment: &langfuse-env
+      NEXTAUTH_URL: http://localhost:53100
+      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@postgres:5432/langfuse
+      SALT: ${LANGFUSE_SALT:-dev-salt}
+      ENCRYPTION_KEY: ${LANGFUSE_ENCRYPTION_KEY:-0000000000000000000000000000000000000000000000000000000000000000}
+      TELEMETRY_ENABLED: "false"
+      CLICKHOUSE_MIGRATION_URL: clickhouse://clickhouse:9000
+      CLICKHOUSE_URL: http://clickhouse:8123
+      CLICKHOUSE_USER: clickhouse
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD:-clickhouse}
+      CLICKHOUSE_CLUSTER_ENABLED: "false"
+      LANGFUSE_S3_EVENT_UPLOAD_BUCKET: langfuse
+      LANGFUSE_S3_EVENT_UPLOAD_REGION: auto
+      LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID: minio
+      LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
+      LANGFUSE_S3_EVENT_UPLOAD_ENDPOINT: http://minio:9000
+      LANGFUSE_S3_EVENT_UPLOAD_FORCE_PATH_STYLE: "true"
+      LANGFUSE_S3_EVENT_UPLOAD_PREFIX: events/
+      LANGFUSE_S3_MEDIA_UPLOAD_BUCKET: langfuse
+      LANGFUSE_S3_MEDIA_UPLOAD_REGION: auto
+      LANGFUSE_S3_MEDIA_UPLOAD_ACCESS_KEY_ID: minio
+      LANGFUSE_S3_MEDIA_UPLOAD_SECRET_ACCESS_KEY: ${MINIO_ROOT_PASSWORD}
+      LANGFUSE_S3_MEDIA_UPLOAD_ENDPOINT: http://minio:9000
+      LANGFUSE_S3_MEDIA_UPLOAD_FORCE_PATH_STYLE: "true"
+      LANGFUSE_S3_MEDIA_UPLOAD_PREFIX: media/
+      REDIS_HOST: redis
+      REDIS_PORT: "6379"
+      REDIS_AUTH: ${REDIS_PASSWORD}
+
+  langfuse-web:
+    <<: *restart
+    profiles: [llmops]
+    image: docker.langfuse.com/langfuse/langfuse:4
+    depends_on: *langfuse-deps
+    ports: ["53100:3000"]
+    environment:
+      <<: *langfuse-env
+      NEXTAUTH_SECRET: ${LANGFUSE_NEXTAUTH_SECRET:-dev-nextauth-secret}
+      LANGFUSE_S3_MEDIA_UPLOAD_ENDPOINT: http://localhost:59000
+      LANGFUSE_S3_MEDIA_UPLOAD_INTERNAL_ENDPOINT: http://minio:9000
+      LANGFUSE_INIT_ORG_ID: agentic-commerce
+      LANGFUSE_INIT_ORG_NAME: Agentic Commerce
+      LANGFUSE_INIT_PROJECT_ID: agentic-commerce-dev
+      LANGFUSE_INIT_PROJECT_NAME: agentic-commerce-dev
+      LANGFUSE_INIT_PROJECT_PUBLIC_KEY: ${LANGFUSE_PUBLIC_KEY:-pk-lf-dev}
+      LANGFUSE_INIT_PROJECT_SECRET_KEY: ${LANGFUSE_SECRET_KEY:-sk-lf-dev}
+      LANGFUSE_INIT_USER_EMAIL: admin@example.com
+      LANGFUSE_INIT_USER_NAME: admin
+      LANGFUSE_INIT_USER_PASSWORD: ${LANGFUSE_ADMIN_PASSWORD:-change-me-please}
+
+volumes:
+  verdaccio_storage:
+  pg_data:
+  redis_data:
+  redpanda_data:
+  opensearch_data:
+  keycloak_data:
+  minio_data:
+  lgtm_data:
+  clickhouse_data:

@@ -1,0 +1,75 @@
+# OpenSearch single node (owned by the search service). Security plugin is off: the NetworkPolicy only admits
+# pods from ac-apps; enable the plugin + TLS before exposing it anywhere else.
+apiVersion: v1
+kind: Service
+metadata: { name: opensearch, labels: { app: opensearch, {{ include "infra.labels" . }} } }
+spec:
+  selector: { app: opensearch }
+  ports: [{ name: http, port: 9200 }]
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata: { name: opensearch, labels: { app: opensearch, {{ include "infra.labels" . }} } }
+spec:
+  serviceName: opensearch
+  replicas: 1
+  selector: { matchLabels: { app: opensearch } }
+  template:
+    metadata: { labels: { app: opensearch, {{ include "infra.labels" . }} } }
+    spec:
+      securityContext: { fsGroup: 1000 }
+      containers:
+        - name: opensearch
+          image: {{ .Values.opensearch.image }}
+          env:
+            - { name: discovery.type, value: single-node }
+            - { name: DISABLE_SECURITY_PLUGIN, value: "true" }
+            - { name: DISABLE_INSTALL_DEMO_CONFIG, value: "true" }
+            - { name: OPENSEARCH_JAVA_OPTS, value: "-Xms{{ .Values.opensearch.heap }} -Xmx{{ .Values.opensearch.heap }}" }
+            - { name: bootstrap.memory_lock, value: "false" }
+          ports: [{ containerPort: 9200 }]
+          readinessProbe: { httpGet: { path: /_cluster/health, port: 9200 }, periodSeconds: 10, failureThreshold: 30 }
+          resources: {{- toYaml .Values.opensearch.resources | nindent 12 }}
+          volumeMounts: [{ name: data, mountPath: /usr/share/opensearch/data }]
+  volumeClaimTemplates:
+    - metadata: { name: data }
+      spec:
+        accessModes: [ReadWriteOnce]
+        storageClassName: {{ .Values.storageClass }}
+        resources: { requests: { storage: {{ .Values.opensearch.storage }} } }
+{{- if .Values.opensearchIndex }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata: { name: opensearch-index, labels: { {{ include "infra.labels" . }} } }
+data:
+  products-index.json: {{ .Values.opensearchIndex | quote }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: opensearch-index
+  labels: { {{ include "infra.labels" . }} }
+  annotations: { "helm.sh/hook": post-install,post-upgrade, "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded }
+spec:
+  backoffLimit: 30
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: index
+          image: curlimages/curl:8.17.0
+          command: [sh, -c]
+          args:
+            - |
+              set -e
+              OS=http://opensearch:9200
+              # new pods are admitted by the NetworkPolicy controller a few seconds after start — wait
+              until curl -fsS $OS/_cluster/health >/dev/null 2>&1; do sleep 2; done
+              if curl -fsS -o /dev/null $OS/_alias/products; then echo "alias products exists"; exit 0; fi
+              # create products-v1 with the mapping and attach alias "products"
+              sed 's/^{/{"aliases":{"products":{}},/' /cfg/products-index.json > /tmp/body.json
+              curl -fsS -X PUT -H 'content-type: application/json' --data-binary @/tmp/body.json $OS/products-v1
+          volumeMounts: [{ name: cfg, mountPath: /cfg }]
+      volumes: [{ name: cfg, configMap: { name: opensearch-index } }]
+{{- end }}

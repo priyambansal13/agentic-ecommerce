@@ -1,0 +1,49 @@
+{{- /* One Deployment + Service per microservice. Each gets ONLY its own Secret (svc-<name>): its DATABASE_URL
+       and the secrets it declares in package.json "ac".secrets. Traffic reaches it only via the edge (Kong). */}}
+{{- range $name, $svc := .Values.services }}
+{{- $app := merge (dict) $svc $.Values.serviceDefaults }}
+---
+apiVersion: v1
+kind: Service
+metadata: { name: {{ $name }}, labels: { app: {{ $name }}, ac/tier: service, {{ include "ac.labels" $ }} } }
+spec:
+  selector: { app: {{ $name }} }
+  ports: [{ name: http, port: {{ $svc.port }}, targetPort: {{ $svc.port }} }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: {{ $name }}, labels: { app: {{ $name }}, ac/tier: service, ac/owner: {{ $svc.owner | default "unknown" }}, {{ include "ac.labels" $ }} } }
+spec:
+  replicas: {{ $app.replicas }}
+  revisionHistoryLimit: 5
+  strategy: { type: RollingUpdate, rollingUpdate: { maxUnavailable: 0, maxSurge: 1 } }
+  selector: { matchLabels: { app: {{ $name }} } }
+  template:
+    metadata:
+      labels: { app: {{ $name }}, ac/tier: service, {{ include "ac.labels" $ }} }
+      annotations: { ac/secrets-version: {{ $.Values.global.secretsVersion | quote }} }
+    spec:
+      {{- with $.Values.global.imagePullSecrets }}
+      imagePullSecrets: [{{ range . }}{ name: {{ . }} }, {{ end }}]
+      {{- end }}
+      securityContext: { runAsUser: 1000, runAsGroup: 1000 }
+      containers:
+        - name: {{ $name }}
+          image: {{ include "ac.image" (dict "root" $ "app" $svc) }}
+          imagePullPolicy: {{ $.Values.global.imagePullPolicy }}
+          ports: [{ containerPort: {{ $svc.port }} }]
+          env:
+            - { name: SERVICE_NAME, value: {{ $name | quote }} }
+            - { name: PORT, value: {{ $svc.port | quote }} }
+            - { name: OIDC_ISSUERS, value: {{ include "ac.issuers" $ | quote }} }
+            - { name: OIDC_JWKS_REWRITE, value: "{{ $.Values.global.publicUrl }}/auth=http://keycloak.{{ $.Values.global.infraNamespace }}.svc.cluster.local:8080/auth" }
+            {{- range $k, $v := $.Values.serviceEnv }}
+            - { name: {{ $k }}, value: {{ $v | quote }} }
+            {{- end }}
+          envFrom: [{ secretRef: { name: svc-{{ $name }} } }]
+          readinessProbe: { httpGet: { path: /health, port: {{ $svc.port }} }, periodSeconds: 5, failureThreshold: 3 }
+          livenessProbe: { httpGet: { path: /health, port: {{ $svc.port }} }, initialDelaySeconds: 20, periodSeconds: 20, failureThreshold: 3 }
+          startupProbe: { httpGet: { path: /health, port: {{ $svc.port }} }, periodSeconds: 3, failureThreshold: 40 }
+          resources: {{- toYaml $app.resources | nindent 12 }}
+          {{- include "ac.containerSecurity" $ | nindent 10 }}
+{{- end }}

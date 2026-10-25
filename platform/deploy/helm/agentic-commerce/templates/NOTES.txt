@@ -1,0 +1,3 @@
+agentic-commerce deployed: {{ len .Values.services }} services, {{ len .Values.zones }} zones in {{ .Release.Namespace }}.
+  Site:     {{ .Values.global.publicUrl }}/        API: {{ .Values.global.publicUrl }}/api/<service>/v1/…
+  Status:   ac k8s status <env>      Rollback one deployable: ac k8s rollback <env> <name>

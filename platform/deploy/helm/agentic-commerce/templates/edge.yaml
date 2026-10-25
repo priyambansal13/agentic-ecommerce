@@ -1,0 +1,46 @@
+# edge = Kong DB-less. Routes /api/<service>/… → http://<service>.<ns>.svc.cluster.local:<port>; config generated
+# from backend service metadata (`ac kong --k8s`). Every service-to-service call also goes through here.
+apiVersion: v1
+kind: ConfigMap
+metadata: { name: edge-config, labels: { {{ include "ac.labels" . }} } }
+data:
+  kong.yml: {{ .Values.edge.config | quote }}
+---
+apiVersion: v1
+kind: Service
+metadata: { name: edge, labels: { app: edge, ac/tier: edge, {{ include "ac.labels" . }} } }
+spec:
+  selector: { app: edge }
+  ports: [{ name: proxy, port: 8000, targetPort: 8000 }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: edge, labels: { app: edge, ac/tier: edge, {{ include "ac.labels" . }} } }
+spec:
+  replicas: 1
+  strategy: { type: RollingUpdate, rollingUpdate: { maxUnavailable: 0, maxSurge: 1 } }
+  selector: { matchLabels: { app: edge } }
+  template:
+    metadata:
+      labels: { app: edge, ac/tier: edge, {{ include "ac.labels" . }} }
+      annotations: { checksum/config: {{ .Values.edge.config | sha256sum | trunc 16 | quote }} }
+    spec:
+      containers:
+        - name: kong
+          image: {{ .Values.edge.image }}
+          env:
+            - { name: KONG_DATABASE, value: "off" }
+            - { name: KONG_DECLARATIVE_CONFIG, value: /kong/kong.yml }
+            - { name: KONG_PROXY_LISTEN, value: "0.0.0.0:8000" }
+            - { name: KONG_ADMIN_LISTEN, value: "127.0.0.1:8001" }
+            - { name: KONG_STATUS_LISTEN, value: "0.0.0.0:8100" }
+            - { name: KONG_PROXY_ACCESS_LOG, value: /dev/stdout }
+            - { name: KONG_PROXY_ERROR_LOG, value: /dev/stderr }
+            - { name: KONG_NGINX_WORKER_PROCESSES, value: "1" }
+          ports: [{ containerPort: 8000 }, { containerPort: 8100 }]
+          readinessProbe: { httpGet: { path: /status/ready, port: 8100 }, periodSeconds: 5 }
+          livenessProbe: { httpGet: { path: /status, port: 8100 }, initialDelaySeconds: 15, periodSeconds: 20 }
+          resources: {{- toYaml .Values.edge.resources | nindent 12 }}
+          securityContext: { allowPrivilegeEscalation: false, capabilities: { drop: [ALL] } }
+          volumeMounts: [{ name: config, mountPath: /kong }]
+      volumes: [{ name: config, configMap: { name: edge-config } }]

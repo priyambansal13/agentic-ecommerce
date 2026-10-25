@@ -1,0 +1,14 @@
+# Copy to terraform.tfvars (gitignored). OCIDs: OCI console → Profile → Tenancy; region = your home region.
+tenancy_ocid     = "ocid1.tenancy.oc1..aaaa…"
+compartment_ocid = "ocid1.tenancy.oc1..aaaa…"   # root compartment, or a dedicated one
+region           = "ap-mumbai-1"
+oci_profile      = "DEFAULT"                     # ~/.oci/config profile
+
+domain     = "shop.example.com"                  # or <name>.duckdns.org
+acme_email = "you@example.com"
+admin_cidr = "203.0.113.7/32"                    # your public IP: curl -s https://api.ipify.org
+
+# Always Free Ampere = 4 OCPU / 24 GB per tenancy in total (swarm-ai uses 2 / 12)
+ocpus     = 2
+memory_gb = 12
+# availability_domain_index = 1                  # if you get "Out of host capacity"

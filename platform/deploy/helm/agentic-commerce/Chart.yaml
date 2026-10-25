@@ -1,0 +1,6 @@
+apiVersion: v2
+name: agentic-commerce
+description: agentic-commerce microservices + micro-frontend zones on k3s (namespace ac-apps) — one Deployment per service/zone, Kong edge, OPA, per-service database bootstrap, ingress and NetworkPolicies
+type: application
+version: 0.1.0
+appVersion: "2026.10"

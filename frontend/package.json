@@ -1,0 +1,19 @@
+{
+  "name": "agentic-commerce-frontend",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.14.0",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --concurrency=20",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "gen": "node scripts/gen.mjs"
+  },
+  "devDependencies": {
+    "turbo": "^2.11.9",
+    "typescript": "^6.0.2"
+  }
+}

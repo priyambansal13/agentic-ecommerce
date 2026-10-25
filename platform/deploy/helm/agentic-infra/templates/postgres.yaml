@@ -1,0 +1,75 @@
+# Postgres 18 + pgvector. Hosts ONE DATABASE PER SERVICE (ac_<db>, owner svc_<db>), created by the
+# db-bootstrap Job of the agentic-commerce chart. Extensions live in template1 so every database inherits them.
+apiVersion: v1
+kind: ConfigMap
+metadata: { name: postgres-init, labels: { {{ include "infra.labels" . }} } }
+data:
+  01-extensions.sh: |
+    #!/bin/bash
+    set -euo pipefail
+    psql -v ON_ERROR_STOP=1 -U postgres -d template1 <<'SQL'
+    CREATE EXTENSION IF NOT EXISTS vector;
+    CREATE EXTENSION IF NOT EXISTS pgcrypto;
+    CREATE EXTENSION IF NOT EXISTS pg_trgm;
+    CREATE EXTENSION IF NOT EXISTS ltree;
+    REVOKE CREATE ON SCHEMA public FROM PUBLIC;
+    SQL
+    psql -v ON_ERROR_STOP=1 -U postgres -d postgres -v pw="$KEYCLOAK_DB_PASSWORD" <<'SQL'
+    CREATE ROLE keycloak LOGIN PASSWORD :'pw';
+    CREATE DATABASE keycloak OWNER keycloak;
+    REVOKE CONNECT ON DATABASE keycloak FROM PUBLIC;
+    SQL
+---
+apiVersion: v1
+kind: Service
+metadata: { name: postgres, labels: { app: postgres, {{ include "infra.labels" . }} } }
+spec:
+  selector: { app: postgres }
+  ports: [{ name: pg, port: 5432 }]
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata: { name: postgres, labels: { app: postgres, {{ include "infra.labels" . }} } }
+spec:
+  serviceName: postgres
+  replicas: 1
+  selector: { matchLabels: { app: postgres } }
+  template:
+    metadata: { labels: { app: postgres, {{ include "infra.labels" . }} } }
+    spec:
+      containers:
+        - name: postgres
+          image: {{ .Values.postgres.image }}
+          env:
+            - { name: POSTGRES_USER, value: postgres }
+            - { name: POSTGRES_DB, value: postgres }
+            - { name: PGDATA, value: /var/lib/postgresql/data/pgdata }
+            - name: POSTGRES_PASSWORD
+              {{- include "infra.secret" "POSTGRES_PASSWORD" | nindent 14 }}
+            - name: KEYCLOAK_DB_PASSWORD
+              {{- include "infra.secret" "KEYCLOAK_DB_PASSWORD" | nindent 14 }}
+          ports: [{ containerPort: 5432 }]
+          readinessProbe: { exec: { command: [pg_isready, -U, postgres] }, periodSeconds: 5 }
+          livenessProbe: { exec: { command: [pg_isready, -U, postgres] }, periodSeconds: 20, failureThreshold: 6 }
+          resources: {{- toYaml .Values.postgres.resources | nindent 12 }}
+          volumeMounts:
+            - { name: data, mountPath: /var/lib/postgresql/data }
+            - { name: init, mountPath: /docker-entrypoint-initdb.d }
+            {{- if .Values.backup.enabled }}
+            - { name: backups, mountPath: /backups }
+            {{- end }}
+      volumes:
+        - { name: init, configMap: { name: postgres-init, defaultMode: 0755 } }
+  volumeClaimTemplates:
+    - metadata: { name: data }
+      spec:
+        accessModes: [ReadWriteOnce]
+        storageClassName: {{ .Values.storageClass }}
+        resources: { requests: { storage: {{ .Values.postgres.storage }} } }
+    {{- if .Values.backup.enabled }}
+    - metadata: { name: backups }
+      spec:
+        accessModes: [ReadWriteOnce]
+        storageClassName: {{ .Values.storageClass }}
+        resources: { requests: { storage: {{ .Values.backup.storage }} } }
+    {{- end }}

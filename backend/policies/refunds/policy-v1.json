@@ -1,0 +1,16 @@
+{
+  "version": "2026-11-01.v1",
+  "approvedBy": "policy-owner@example.com",
+  "currencyCaps": { "INR": { "autoMaxMinor": 200000, "dualControlMinor": 2500000 } },
+  "categoryReturnWindowDays": { "default": 10, "electronics": 7, "fashion": 30, "grocery": 0, "digital": 0 },
+  "rules": [
+    { "id": "R1", "when": { "daysSinceDeliveryGtWindow": true, "reasonNot": ["DAMAGED"] }, "then": { "outcome": "REJECT", "hard": true } },
+    { "id": "R1b", "when": { "reason": ["DAMAGED"], "daysSinceDeliveryGt": 30 }, "then": { "outcome": "REJECT", "hard": true } },
+    { "id": "R2", "when": { "reason": ["NOT_DELIVERED"], "carrierDelivered": true, "hasDeliveryPhoto": false }, "then": { "route": "PENDING_HUMAN" } },
+    { "id": "R3", "when": { "amountLteAutoMax": true, "riskLt": 0.3, "buyerRefunds90dLte": 2 }, "then": { "autoEligible": true } },
+    { "id": "R4", "when": { "category": ["digital", "grocery"] }, "then": { "allowedOutcomes": ["REPLACEMENT", "STORE_CREDIT"] } },
+    { "id": "R5", "when": { "sellerTier": ["TRUSTED"], "sellerDisputedWithinHours": 48 }, "then": { "route": "PENDING_HUMAN" } },
+    { "id": "R6", "when": { "buyerRefundRate180dGt": 0.3 }, "then": { "route": "PENDING_HUMAN", "raiseFraudAlert": true } }
+  ],
+  "defaultAllowedOutcomes": ["REFUND", "PARTIAL_REFUND", "REPLACEMENT", "STORE_CREDIT"]
+}

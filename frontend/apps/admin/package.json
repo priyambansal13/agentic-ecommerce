@@ -1,0 +1,41 @@
+{
+  "name": "@ac/zone-admin",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "ac": {
+    "kind": "zone",
+    "port": 3304,
+    "basePath": "/admin",
+    "owner": "team-trust"
+  },
+  "scripts": {
+    "dev": "next dev -p 3304",
+    "build": "next build",
+    "start": "next start -p 3304",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint src",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@ac/agent-widget": "workspace:^",
+    "@ac/bff": "workspace:^",
+    "@ac/contracts": "^0.7.1",
+    "@ac/money": "^0.1.0",
+    "@ac/ui": "workspace:^",
+    "next": "16.4.2",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "oxlint": "^1.89.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
+  }
+}

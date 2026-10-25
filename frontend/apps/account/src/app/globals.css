@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "@ac/ui/tokens.css";
+/* Tailwind must also scan the shared component packages */
+@source "../../node_modules/@ac/ui/dist";
+@source "../../node_modules/@ac/agent-widget/dist";

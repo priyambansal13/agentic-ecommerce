@@ -1,0 +1,72 @@
+# Keycloak in production mode, backed by Postgres db "keycloak", served under <publicUrl>/auth via Traefik.
+# Realms (customers, staff) are imported at start from the ConfigMap rendered by the CLI with the real domain.
+apiVersion: v1
+kind: ConfigMap
+metadata: { name: keycloak-realms, labels: { {{ include "infra.labels" . }} } }
+data:
+{{- range $file, $json := .Values.keycloak.realms }}
+  {{ $file }}: {{ $json | quote }}
+{{- end }}
+---
+apiVersion: v1
+kind: Service
+metadata: { name: keycloak, labels: { app: keycloak, {{ include "infra.labels" . }} } }
+spec:
+  selector: { app: keycloak }
+  ports: [{ name: http, port: 8080 }, { name: mgmt, port: 9000 }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: keycloak, labels: { app: keycloak, {{ include "infra.labels" . }} } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: keycloak } }
+  template:
+    metadata:
+      labels: { app: keycloak, {{ include "infra.labels" . }} }
+      annotations: { checksum/realms: {{ toJson .Values.keycloak.realms | sha256sum | trunc 16 | quote }} }
+    spec:
+      containers:
+        - name: keycloak
+          image: {{ .Values.keycloak.image }}
+          args: [start, --import-realm]
+          env:
+            - { name: KC_DB, value: postgres }
+            - { name: KC_DB_URL, value: "jdbc:postgresql://postgres:5432/keycloak" }
+            - { name: KC_DB_USERNAME, value: keycloak }
+            - name: KC_DB_PASSWORD
+              {{- include "infra.secret" "KEYCLOAK_DB_PASSWORD" | nindent 14 }}
+            - { name: KC_BOOTSTRAP_ADMIN_USERNAME, value: admin }
+            - name: KC_BOOTSTRAP_ADMIN_PASSWORD
+              {{- include "infra.secret" "KEYCLOAK_ADMIN_PASSWORD" | nindent 14 }}
+            - { name: KC_HTTP_ENABLED, value: "true" }
+            - { name: KC_HTTP_RELATIVE_PATH, value: /auth }
+            - { name: KC_HOSTNAME, value: "{{ .Values.publicUrl }}/auth" }
+            - { name: KC_PROXY_HEADERS, value: xforwarded }
+            - { name: KC_HEALTH_ENABLED, value: "true" }
+            - { name: JAVA_OPTS_KC_HEAP, value: "-XX:MaxRAMPercentage=65" }
+          ports: [{ containerPort: 8080 }, { containerPort: 9000 }]
+          readinessProbe: { httpGet: { path: /auth/health/ready, port: 9000 }, periodSeconds: 10, failureThreshold: 60 }
+          livenessProbe: { httpGet: { path: /auth/health/live, port: 9000 }, initialDelaySeconds: 120, periodSeconds: 30 }
+          resources: {{- toYaml .Values.keycloak.resources | nindent 12 }}
+          {{- include "infra.podSecurity" . | nindent 10 }}
+          volumeMounts: [{ name: realms, mountPath: /opt/keycloak/data/import }]
+      volumes: [{ name: realms, configMap: { name: keycloak-realms } }]
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: keycloak
+  labels: { {{ include "infra.labels" . }} }
+  {{- with .Values.ingressAnnotations }}
+  annotations: {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  {{- with .Values.tls }}
+  tls: [{ hosts: [{{ .host | quote }}], secretName: {{ .secretName }} }]
+  {{- end }}
+  rules:
+    - {{- with .Values.host }} host: {{ . | quote }}{{ end }}
+      http:
+        paths:
+          - { path: /auth, pathType: Prefix, backend: { service: { name: keycloak, port: { number: 8080 } } } }

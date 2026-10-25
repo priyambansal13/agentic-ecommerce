@@ -1,0 +1,92 @@
+name: frontend-ci
+
+# Micro-frontends CI: only zones affected by the change are built and containerised.
+on:
+  push:
+    branches: [main]
+    paths: ['frontend/**', '.github/workflows/frontend.yml']
+  pull_request:
+    paths: ['frontend/**', '.github/workflows/frontend.yml']
+
+defaults:
+  run:
+    working-directory: frontend
+
+concurrency:
+  group: frontend-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  AC_REGISTRY: https://npm.pkg.github.com/
+
+jobs:
+  affected:
+    runs-on: ubuntu-latest
+    outputs:
+      zones: ${{ steps.list.outputs.zones }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: pnpm/action-setup@v4
+        with: { package_json_file: frontend/package.json }
+      - uses: actions/setup-node@v4
+        with: { node-version-file: frontend/.nvmrc, cache: pnpm, cache-dependency-path: frontend/pnpm-lock.yaml }
+      - name: use GitHub Packages for @ac/*
+        run: |
+          printf '@ac:registry=%s\n//npm.pkg.github.com/:_authToken=%s\n' "$AC_REGISTRY" "${{ secrets.GITHUB_TOKEN }}" > .npmrc
+      - run: pnpm install --frozen-lockfile
+      - id: list
+        run: |
+          zones=$(pnpm exec turbo ls --affected --output=json | node -e '
+            const j = JSON.parse(require("fs").readFileSync(0, "utf8"));
+            console.log(JSON.stringify((j.packages?.items ?? []).filter(p => p.path?.startsWith("apps/")).map(p => p.path.split("/")[1])));')
+          echo "zones=$zones" >> "$GITHUB_OUTPUT"
+        env:
+          TURBO_SCM_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+
+  zone:
+    needs: affected
+    if: needs.affected.outputs.zones != '[]'
+    runs-on: ubuntu-24.04-arm            # images are linux/arm64 (Oracle Cloud Ampere A1 VM)
+    permissions: { contents: read, packages: write }
+    strategy:
+      fail-fast: false
+      matrix:
+        zone: ${{ fromJson(needs.affected.outputs.zones) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { package_json_file: frontend/package.json }
+      - uses: actions/setup-node@v4
+        with: { node-version-file: frontend/.nvmrc, cache: pnpm, cache-dependency-path: frontend/pnpm-lock.yaml }
+      - run: printf '@ac:registry=%s\n//npm.pkg.github.com/:_authToken=%s\n' "$AC_REGISTRY" "${{ secrets.GITHUB_TOKEN }}" > .npmrc
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm exec turbo run build lint test --filter "@ac/zone-${{ matrix.zone }}..."
+      - name: image → ghcr (linux/arm64)
+        run: |
+          img=ghcr.io/${{ github.repository_owner }}/ac/zone-${{ matrix.zone }}:${{ github.sha }}
+          docker build --secret id=npmrc,src=.npmrc -f apps/${{ matrix.zone }}/Dockerfile -t "$img" .
+          if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+            echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+            docker push "$img"
+          fi
+
+  deploy:
+    needs: [affected, zone]
+    if: github.ref == 'refs/heads/main' && needs.affected.outputs.zones != '[]'
+    runs-on: ubuntu-latest
+    environment: prod                    # manual approval
+    strategy:
+      max-parallel: 1
+      matrix:
+        zone: ${{ fromJson(needs.affected.outputs.zones) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+      - working-directory: .
+        run: |
+          printf '%s' "${{ secrets.PROD_KUBECONFIG }}" > platform/deploy/envs/prod.kubeconfig
+          printf '%s' "${{ secrets.PROD_ENV }}" > platform/deploy/envs/prod.env
+      - name: ac k8s deploy prod zone-${{ matrix.zone }}
+        working-directory: .
+        run: AC_BACKEND_DIR=$PWD/backend AC_FRONTEND_DIR=$PWD/frontend node platform/scripts/ac.mjs k8s deploy prod zone-${{ matrix.zone }} --tag ${{ github.sha }}

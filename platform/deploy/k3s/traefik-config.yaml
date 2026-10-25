@@ -1,0 +1,17 @@
+# k3s ships Traefik as a HelmChart; this tunes it for agentic-commerce: AG-UI agent streams (SSE) can run for
+# minutes, so entrypoint read/write timeouts are raised to 300 s. Applied by cloud-init (OCI VM) and by
+# `ac k8s local up`.
+apiVersion: helm.cattle.io/v1
+kind: HelmChartConfig
+metadata:
+  name: traefik
+  namespace: kube-system
+spec:
+  valuesContent: |-
+    ports:
+      web:
+        transport:
+          respondingTimeouts: { readTimeout: 300s, writeTimeout: 300s, idleTimeout: 360s }
+      websecure:
+        transport:
+          respondingTimeouts: { readTimeout: 300s, writeTimeout: 300s, idleTimeout: 360s }

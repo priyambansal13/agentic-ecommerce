@@ -1,0 +1,160 @@
+{
+  "realm": "customers",
+  "enabled": true,
+  "registrationAllowed": true,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "accessTokenLifespan": 900,
+  "sslRequired": "none",
+  "roles": {
+    "realm": [
+      {
+        "name": "buyer",
+        "description": "Shops and pays"
+      },
+      {
+        "name": "seller",
+        "description": "Lists products and fulfils orders"
+      },
+      {
+        "name": "service",
+        "description": "service-to-service calls (client-credentials of the services client); internal endpoints only"
+      },
+      {
+        "name": "agent",
+        "description": "agent gateway (agents client service account) \u2014 may name the acting agent via X-Agent-Act (ADR 0015)"
+      }
+    ]
+  },
+  "defaultRoles": [],
+  "clients": [
+    {
+      "clientId": "web",
+      "name": "web",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "dev-web-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "http://localhost:3300/*"
+      ],
+      "webOrigins": [
+        "http://localhost:3300"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "http://localhost:3300/*"
+      }
+    },
+    {
+      "clientId": "agents",
+      "name": "Agent Gateway",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "dev-agents-secret",
+      "standardFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "attributes": {
+        "standard.token.exchange.enabled": "true"
+      }
+    },
+    {
+      "clientId": "services",
+      "name": "Service-to-service",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "dev-services-secret",
+      "standardFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "directAccessGrantsEnabled": false
+    },
+    {
+      "clientId": "user-service",
+      "name": "user service (grants the seller role after KYC)",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "dev-user-service-secret",
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": true
+    }
+  ],
+  "users": [
+    {
+      "username": "buyer",
+      "email": "buyer@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Bea",
+      "lastName": "Dev",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "buyer",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "buyer"
+      ],
+      "id": "0b0b0b0b-0000-4000-8000-000000000001"
+    },
+    {
+      "username": "seller",
+      "email": "seller@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Sam",
+      "lastName": "Dev",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "seller",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "seller",
+        "buyer"
+      ],
+      "id": "05e11e40-0000-4000-8000-000000000001"
+    },
+    {
+      "username": "service-account-user-service",
+      "enabled": true,
+      "serviceAccountClientId": "user-service",
+      "clientRoles": {
+        "realm-management": [
+          "manage-users",
+          "view-users",
+          "view-realm"
+        ]
+      }
+    },
+    {
+      "username": "service-account-services",
+      "enabled": true,
+      "serviceAccountClientId": "services",
+      "realmRoles": [
+        "service"
+      ]
+    },
+    {
+      "username": "service-account-agents",
+      "enabled": true,
+      "serviceAccountClientId": "agents",
+      "realmRoles": [
+        "service",
+        "agent"
+      ]
+    }
+  ]
+}

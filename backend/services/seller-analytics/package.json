@@ -1,0 +1,52 @@
+{
+  "name": "@ac/seller-analytics",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "ac": {
+    "kind": "service",
+    "port": 4111,
+    "database": "analytics",
+    "owner": "team-seller",
+    "publishes": [],
+    "consumes": [
+      "order.events",
+      "payment.events",
+      "inventory.events",
+      "returns.events"
+    ],
+    "secrets": []
+  },
+  "scripts": {
+    "build": "nest build",
+    "dev": "nest start --watch --preserveWatchOutput",
+    "start": "node dist/main.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "oxlint src",
+    "test": "vitest run --passWithNoTests",
+    "seed": "node dist/seed.js"
+  },
+  "dependencies": {
+    "@ac/contracts": "workspace:^",
+    "@ac/demo-data": "workspace:^",
+    "@ac/nest-common": "workspace:^",
+    "@nestjs/common": "~12.1.3",
+    "@nestjs/core": "~12.1.3",
+    "@nestjs/platform-fastify": "~12.1.3",
+    "@nestjs/typeorm": "^12.0.2",
+    "pg": "^8.23.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.1",
+    "typeorm": "^1.1.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^12.0.9",
+    "@nestjs/schematics": "^12.0.0",
+    "@nestjs/testing": "~12.1.3",
+    "@types/node": "^24.0.0",
+    "oxlint": "^1.89.0",
+    "typescript": "^6.0.2",
+    "vitest": "^4.1.2"
+  }
+}

@@ -1,0 +1,85 @@
+# Kafka API (Redpanda, single node). Topics from platform/infra/kafka/topics.json via the topics Job.
+apiVersion: v1
+kind: Service
+metadata: { name: redpanda, labels: { app: redpanda, {{ include "infra.labels" . }} } }
+spec:
+  clusterIP: None
+  selector: { app: redpanda }
+  ports: [{ name: kafka, port: 9092 }, { name: admin, port: 9644 }]
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata: { name: redpanda, labels: { app: redpanda, {{ include "infra.labels" . }} } }
+spec:
+  serviceName: redpanda
+  replicas: 1
+  selector: { matchLabels: { app: redpanda } }
+  template:
+    metadata: { labels: { app: redpanda, {{ include "infra.labels" . }} } }
+    spec:
+      securityContext: { fsGroup: 101 }
+      containers:
+        - name: redpanda
+          image: {{ .Values.redpanda.image }}
+          args:
+            - redpanda
+            - start
+            - --kafka-addr=internal://0.0.0.0:9092
+            - --advertise-kafka-addr=internal://redpanda-0.redpanda.{{ .Release.Namespace }}.svc.cluster.local:9092
+            - --rpc-addr=0.0.0.0:33145
+            - --advertise-rpc-addr=redpanda-0.redpanda.{{ .Release.Namespace }}.svc.cluster.local:33145
+            - --mode=dev-container
+            - --smp=1
+            - --memory={{ .Values.redpanda.memory }}
+            - --reserve-memory=0M
+            - --default-log-level=warn
+          ports: [{ containerPort: 9092 }, { containerPort: 9644 }]
+          readinessProbe: { exec: { command: [sh, -c, "rpk cluster health | grep -E 'Healthy:.+true'"] }, periodSeconds: 10, failureThreshold: 30 }
+          resources: {{- toYaml .Values.redpanda.resources | nindent 12 }}
+          volumeMounts: [{ name: data, mountPath: /var/lib/redpanda/data }]
+  volumeClaimTemplates:
+    - metadata: { name: data }
+      spec:
+        accessModes: [ReadWriteOnce]
+        storageClassName: {{ .Values.storageClass }}
+        resources: { requests: { storage: {{ .Values.redpanda.storage }} } }
+{{- if .Values.kafkaTopics }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata: { name: kafka-topics, labels: { {{ include "infra.labels" . }} } }
+data:
+  topics.json: {{ .Values.kafkaTopics | quote }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: kafka-topics
+  labels: { {{ include "infra.labels" . }} }
+  annotations: { "helm.sh/hook": post-install,post-upgrade, "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded }
+spec:
+  backoffLimit: 20
+  template:
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: topics
+          image: {{ .Values.redpanda.image }}
+          command: [sh, -c]
+          args:
+            - |
+              set -e
+              B=redpanda-0.redpanda.{{ .Release.Namespace }}.svc.cluster.local:9092
+              until rpk topic list -X brokers=$B >/dev/null 2>&1; do echo waiting for redpanda; sleep 3; done
+              existing=$(rpk topic list -X brokers=$B)
+              # topics.json → "name partitions retention" lines (no jq in the image)
+              tr -d '\n ' < /cfg/topics.json | grep -o '"name":"[^"]*"[^}]*' | while read -r t; do
+                name=$(echo "$t" | sed 's/.*"name":"\([^"]*\)".*/\1/')
+                parts=$(echo "$t" | grep -o '"partitions":[0-9]*' | cut -d: -f2); parts=${parts:-3}
+                ret=$(echo "$t" | grep -o '"retentionMs":[0-9]*' | cut -d: -f2); ret=${ret:-604800000}
+                echo "$existing" | grep -q "^$name " && continue
+                rpk topic create "$name" -p "$parts" -c retention.ms="$ret" -X brokers=$B
+              done
+          volumeMounts: [{ name: cfg, mountPath: /cfg }]
+      volumes: [{ name: cfg, configMap: { name: kafka-topics } }]
+{{- end }}

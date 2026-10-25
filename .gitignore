@@ -1,0 +1,14 @@
+# each folder (platform/, backend/, frontend/) also has its own .gitignore
+.DS_Store
+node_modules/
+*.log
+.env
+.env.*
+!.env.example
+.npmrc
+!frontend/.npmrc
+*.kubeconfig
+*.pem
+*.key
+*.tfstate*
+.terraform/

@@ -1,0 +1,48 @@
+# agentic-infra — installed by `ac k8s deploy <env>` into namespace ac-infra.
+# Secrets come from Secret `ac-infra` (created by `ac k8s secrets <env>`): POSTGRES_PASSWORD, REDIS_PASSWORD,
+# KEYCLOAK_ADMIN_PASSWORD, KEYCLOAK_DB_PASSWORD, MINIO_ROOT_PASSWORD.
+publicUrl: http://localhost:8088        # https://<domain> in prod — Keycloak issuer base is <publicUrl>/auth
+storageClass: local-path                 # k3s default provisioner
+appsNamespace: ac-apps
+
+postgres:
+  image: pgvector/pgvector:0.8.7-pg18
+  storage: 20Gi
+  resources: { requests: { cpu: 100m, memory: 256Mi }, limits: { memory: 1Gi } }
+redis:
+  image: redis:8.8
+  storage: 2Gi
+  resources: { requests: { cpu: 20m, memory: 64Mi }, limits: { memory: 256Mi } }
+redpanda:
+  image: docker.redpanda.com/redpandadata/redpanda:v25.3.17
+  storage: 10Gi
+  memory: 768M
+  resources: { requests: { cpu: 100m, memory: 1Gi }, limits: { memory: 1280Mi } }
+opensearch:
+  image: opensearchproject/opensearch:3.9.0
+  storage: 10Gi
+  heap: 512m
+  resources: { requests: { cpu: 100m, memory: 1Gi }, limits: { memory: 1536Mi } }
+keycloak:
+  image: quay.io/keycloak/keycloak:26.8
+  resources: { requests: { cpu: 100m, memory: 512Mi }, limits: { memory: 1Gi } }
+  realms: {}                             # { "realm-customers.json": "<json>" } — set by the CLI with the real domain
+minio:
+  image: cgr.dev/chainguard/minio
+  storage: 10Gi
+  buckets: [product-images, return-evidence, audit]
+  resources: { requests: { cpu: 20m, memory: 128Mi }, limits: { memory: 512Mi } }
+observability:
+  enabled: false                         # Grafana otel-lgtm (≈700 MB) — enable in prod if the VM has room
+  image: grafana/otel-lgtm:0.37.0
+  resources: { requests: { cpu: 50m, memory: 512Mi }, limits: { memory: 1Gi } }
+backup:
+  enabled: true
+  schedule: "30 2 * * *"
+  retentionDays: 14
+  storage: 20Gi
+kafkaTopics: ""                          # topics.json content — set by the CLI
+opensearchIndex: ""                      # products-index.json content — set by the CLI
+host: ""                                 # e.g. shop.example.com (empty = any host, for local k3s)
+tls: null                                # { host: shop.example.com, secretName: ac-tls } in prod
+ingressAnnotations: {}                   # e.g. { cert-manager.io/cluster-issuer: letsencrypt }

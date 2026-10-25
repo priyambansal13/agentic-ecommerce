@@ -1,0 +1,41 @@
+{{- if .Values.backup.enabled }}
+# Nightly logical backup of EVERY per-service database (and keycloak) to a dedicated PVC, kept N days.
+# Copy /backups off the VM (OCI Object Storage pre-authenticated request, rsync) for real disaster recovery.
+# The volume is the postgres StatefulSet's second claim (backups-postgres-0): bound at install (k3s local-path binds
+# on first consumer) and mountable here because this is a single-node cluster (RWO = one node).
+apiVersion: batch/v1
+kind: CronJob
+metadata: { name: pg-backup, labels: { {{ include "infra.labels" . }} } }
+spec:
+  schedule: {{ .Values.backup.schedule | quote }}
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: backup
+              image: {{ .Values.postgres.image }}
+              command: [bash, -c]
+              args:
+                - |
+                  set -euo pipefail
+                  # new pods are admitted by the NetworkPolicy controller a few seconds after start — wait
+                  for i in $(seq 1 60); do pg_isready -q -h postgres && break; sleep 2; done
+                  dbs=$(psql -h postgres -U postgres -Atc "select datname from pg_database where datname like 'ac\_%' or datname = 'keycloak'")
+                  [ -n "$dbs" ] || { echo "no databases found" >&2; exit 1; }
+                  d=/backups/$(date +%F_%H%M); mkdir -p "$d"
+                  for db in $dbs; do
+                    pg_dump -h postgres -U postgres -Fc "$db" > "$d/$db.dump"
+                    echo "dumped $db ($(du -h "$d/$db.dump" | cut -f1))"
+                  done
+                  find /backups -mindepth 1 -maxdepth 1 -type d -mtime +{{ .Values.backup.retentionDays }} -exec rm -rf {} +
+              env:
+                - name: PGPASSWORD
+                  {{- include "infra.secret" "POSTGRES_PASSWORD" | nindent 18 }}
+              volumeMounts: [{ name: backups, mountPath: /backups }]
+          volumes: [{ name: backups, persistentVolumeClaim: { claimName: backups-postgres-0 } }]
+{{- end }}

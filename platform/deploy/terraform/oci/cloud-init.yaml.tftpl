@@ -1,0 +1,50 @@
+#cloud-config
+# k3s node for agentic-commerce on Oracle Cloud (Ubuntu 24.04 aarch64). Idempotent first-boot setup.
+package_update: true
+packages: [curl, iptables-persistent, unattended-upgrades]
+
+write_files:
+  # Traefik (bundled with k3s): 300 s timeouts for AG-UI agent streams
+  - path: /var/lib/rancher/k3s/server/manifests/traefik-config.yaml
+    permissions: "0600"
+    content: |
+      ${indent(6, traefik_config)}
+  # cert-manager via the k3s Helm controller
+  - path: /var/lib/rancher/k3s/server/manifests/cert-manager.yaml
+    permissions: "0600"
+    content: |
+      apiVersion: helm.cattle.io/v1
+      kind: HelmChart
+      metadata: { name: cert-manager, namespace: kube-system }
+      spec:
+        repo: https://charts.jetstack.io
+        chart: cert-manager
+        version: ${cert_manager_version}
+        targetNamespace: cert-manager
+        createNamespace: true
+        valuesContent: |-
+          crds: { enabled: true }
+  - path: /opt/agentic/cluster-issuer.yaml
+    permissions: "0600"
+    content: |
+      apiVersion: cert-manager.io/v1
+      kind: ClusterIssuer
+      metadata: { name: letsencrypt }
+      spec:
+        acme:
+          server: https://acme-v02.api.letsencrypt.org/directory
+          email: ${acme_email}
+          privateKeySecretRef: { name: letsencrypt-account }
+          solvers: [{ http01: { ingress: { ingressClassName: traefik } } }]
+
+runcmd:
+  # 4 GB swap: image pulls and JVM services (Keycloak, OpenSearch) spike memory
+  - [sh, -c, "[ -f /swapfile ] || (fallocate -l 4G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile && echo '/swapfile none swap sw 0 0' >> /etc/fstab)"]
+  # Oracle's Ubuntu images REJECT everything except SSH in iptables — open HTTP/HTTPS and the k3s API
+  # (the OCI security list still limits 6443 to admin_cidr)
+  - [sh, -c, "for p in 80 443 6443; do iptables -C INPUT -p tcp --dport $p -m state --state NEW -j ACCEPT 2>/dev/null || iptables -I INPUT 5 -p tcp --dport $p -m state --state NEW -j ACCEPT; done; netfilter-persistent save"]
+  # pods ↔ pods traffic must not hit Oracle's FORWARD REJECT rule
+  - [sh, -c, "iptables -C FORWARD -s 10.42.0.0/15 -j ACCEPT 2>/dev/null || iptables -I FORWARD 1 -s 10.42.0.0/15 -j ACCEPT; iptables -C FORWARD -d 10.42.0.0/15 -j ACCEPT 2>/dev/null || iptables -I FORWARD 1 -d 10.42.0.0/15 -j ACCEPT; netfilter-persistent save"]
+  - [sh, -c, "curl -sfL https://get.k3s.io | INSTALL_K3S_VERSION='${k3s_version}' sh -s - server --tls-san ${domain} --tls-san $(curl -s https://api.ipify.org) --write-kubeconfig-mode 600"]
+  - [sh, -c, "for i in $(seq 1 90); do k3s kubectl get crd clusterissuers.cert-manager.io >/dev/null 2>&1 && break; sleep 10; done; k3s kubectl apply -f /opt/agentic/cluster-issuer.yaml"]
+  - [sh, -c, "echo 'agentic-commerce k3s node ready' > /etc/motd"]

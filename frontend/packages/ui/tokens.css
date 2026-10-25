@@ -1,0 +1,60 @@
+/* Shared design tokens for every zone — Amazon-style design language (our own brand: "agentic.commerce").
+   Import once per zone: @import "@ac/ui/tokens.css"; */
+:root {
+  --bg: #eaeded;            /* page */
+  --fg: #0f1111;            /* primary text */
+  --muted: #565959;         /* secondary text */
+  --card: #ffffff;
+  --line: #d5d9d9;
+  --surface-2: #f0f2f2;     /* order-card header, subtle fills */
+  --nav: #131921;           /* top header */
+  --nav-2: #232f3e;         /* sub navigation */
+  --nav-fg: #ffffff;
+  --nav-muted: #cccccc;
+  --accent: #ff9900;        /* brand orange */
+  --accent-fg: #0f1111;
+  --search-btn: #febd69;
+  --link: #007185;
+  --link-hover: #c7511f;
+  --btn: #ffd814;           /* primary pill button */
+  --btn-border: #fcd200;
+  --btn-2: #ffa41c;         /* secondary call to action */
+  --btn-2-border: #ff8f00;
+  --success: #067d62;
+  --danger: #b12704;
+  --radius: 8px;
+  --font: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  /* data viz + status (dataviz reference palette) */
+  --series-1: #2a78d6;
+  --grid: #e3e6e6;
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1418;
+    --fg: #f2f4f5;
+    --muted: #aab3b8;
+    --card: #182027;
+    --line: #2c3640;
+    --surface-2: #1f2a33;
+    --nav: #0b0f13;
+    --nav-2: #18222c;
+    --link: #3fb8c9;
+    --link-hover: #ffa41c;
+    --success: #34c08f;
+    --danger: #ff6b4a;
+    --series-1: #3987e5;
+    --grid: #2c3640;
+  }
+}
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 14px;
+}
+a.ac-link, .ac-link a { color: var(--link); }
+a.ac-link:hover, .ac-link a:hover { color: var(--link-hover); text-decoration: underline; }

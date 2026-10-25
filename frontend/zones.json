@@ -1,0 +1,65 @@
+{
+  "$comment": "Micro-frontend zones (Next.js Multi-Zones). The shell owns '/' and rewrites each basePath to its zone. `pnpm gen zone` appends here.",
+  "zones": [
+    {
+      "name": "shell",
+      "port": 3300,
+      "basePath": "",
+      "owner": "team-web-platform",
+      "title": "Home",
+      "description": "Home page and global layout; routes every zone through one domain."
+    },
+    {
+      "name": "storefront",
+      "port": 3301,
+      "basePath": "/shop",
+      "owner": "team-commerce",
+      "title": "Shop",
+      "agents": [
+        "assistant",
+        "order-support",
+        "ping"
+      ],
+      "description": "Search, product pages, cart and checkout \u2014 plus the shopping assistant (AG-UI generative UI)."
+    },
+    {
+      "name": "account",
+      "port": 3302,
+      "basePath": "/account",
+      "owner": "team-commerce",
+      "title": "Account",
+      "agents": [
+        "refund",
+        "order-support",
+        "ping"
+      ],
+      "description": "Orders, tracking and returns \u2014 the governed refund agent chat lives here."
+    },
+    {
+      "name": "seller",
+      "port": 3303,
+      "basePath": "/seller",
+      "owner": "team-seller",
+      "title": "Seller",
+      "agents": [
+        "listing-copilot",
+        "seller-insights",
+        "ping"
+      ],
+      "description": "Seller dashboard, listings and inventory, payouts \u2014 listing copilot and insights agents."
+    },
+    {
+      "name": "admin",
+      "port": 3304,
+      "basePath": "/admin",
+      "owner": "team-trust",
+      "title": "Admin",
+      "agents": [
+        "fraud-investigator",
+        "dispute",
+        "ping"
+      ],
+      "description": "Approval queue for agent interrupts, moderation, disputes, fraud console and agent oversight."
+    }
+  ]
+}

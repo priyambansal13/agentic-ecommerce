@@ -1,0 +1,35 @@
+# OPA for agent tool authorization — serves the bundle built from backend/policies (fail-closed client in agents).
+apiVersion: v1
+kind: ConfigMap
+metadata: { name: opa-bundle, labels: { {{ include "ac.labels" . }} } }
+binaryData:
+  agents.tar.gz: {{ .Values.opa.bundle | quote }}
+---
+apiVersion: v1
+kind: Service
+metadata: { name: opa, labels: { app: opa, ac/tier: policy, {{ include "ac.labels" . }} } }
+spec:
+  selector: { app: opa }
+  ports: [{ name: http, port: 8181, targetPort: 8181 }]
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: { name: opa, labels: { app: opa, ac/tier: policy, {{ include "ac.labels" . }} } }
+spec:
+  replicas: 1
+  selector: { matchLabels: { app: opa } }
+  template:
+    metadata:
+      labels: { app: opa, ac/tier: policy, {{ include "ac.labels" . }} }
+      annotations: { checksum/bundle: {{ .Values.opa.bundle | sha256sum | trunc 16 | quote }} }
+    spec:
+      containers:
+        - name: opa
+          image: {{ .Values.opa.image }}
+          args: [run, --server, --addr=0.0.0.0:8181, --log-level=info, -b, /bundle/agents.tar.gz]
+          ports: [{ containerPort: 8181 }]
+          readinessProbe: { httpGet: { path: /health, port: 8181 }, periodSeconds: 5 }
+          resources: {{- toYaml .Values.opa.resources | nindent 12 }}
+          securityContext: { runAsNonRoot: true, runAsUser: 1000, allowPrivilegeEscalation: false, capabilities: { drop: [ALL] } }
+          volumeMounts: [{ name: bundle, mountPath: /bundle }]
+      volumes: [{ name: bundle, configMap: { name: opa-bundle } }]

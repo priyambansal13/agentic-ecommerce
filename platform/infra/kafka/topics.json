@@ -1,0 +1,15 @@
+{
+  "defaults": { "partitions": 3, "retentionMs": 604800000 },
+  "topics": [
+    { "name": "user.events" },
+    { "name": "catalog.events" },
+    { "name": "inventory.events", "partitions": 6 },
+    { "name": "order.events", "partitions": 6 },
+    { "name": "payment.events", "partitions": 6 },
+    { "name": "returns.events" },
+    { "name": "fraud.events" },
+    { "name": "admin.events" },
+    { "name": "agent.events" },
+    { "name": "dlq.events", "partitions": 1, "retentionMs": 2592000000 }
+  ]
+}

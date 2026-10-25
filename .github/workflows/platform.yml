@@ -1,0 +1,68 @@
+name: platform-ci
+
+on:
+  push:
+    branches: [main]
+    paths: ['platform/**', '.github/workflows/platform.yml']
+  pull_request:
+    paths: ['platform/**', '.github/workflows/platform.yml']
+
+defaults:
+  run:
+    working-directory: platform
+
+jobs:
+  cli-and-infra:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version-file: platform/.nvmrc }
+      - name: CLI syntax
+        run: node --check scripts/ac.mjs && bash -n setup.sh
+      - name: shellcheck
+        run: shellcheck setup.sh
+      - name: compose file valid
+        run: |
+          cp .env.example .env
+          docker compose -f infra/docker-compose.yml --env-file .env config --quiet
+
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version-file: platform/.nvmrc }
+      - name: Mermaid diagrams parse
+        run: |
+          npm i --no-save mermaid@11 jsdom >/dev/null
+          node -e '
+            const { JSDOM } = require("jsdom"); const fs = require("fs");
+            const dom = new JSDOM(""); Object.assign(globalThis, { window: dom.window, document: dom.window.document, DOMParser: dom.window.DOMParser });
+            (async () => {
+              const { default: m } = await import("mermaid"); m.initialize({ startOnLoad: false }); let bad = 0;
+              for (const f of fs.readdirSync("docs").filter((x) => x.endsWith(".md")))
+                for (const [, src] of fs.readFileSync("docs/" + f, "utf8").matchAll(/```mermaid\n([\s\S]*?)```/g))
+                  await m.parse(src).catch((e) => { bad++; console.error(f, e.message.split("\n")[0]); });
+              process.exit(bad ? 1 : 0);
+            })();'
+
+  helm:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: azure/setup-helm@v4
+      - name: lint + render both charts
+        run: |
+          helm lint deploy/helm/agentic-infra
+          helm lint deploy/helm/agentic-commerce -f deploy/helm/agentic-commerce/values.services.yaml
+          helm template t deploy/helm/agentic-commerce -f deploy/helm/agentic-commerce/values.services.yaml --set edge.config=x --set opa.bundle=AA > /dev/null
+          helm template t deploy/helm/agentic-infra > /dev/null
+
+  terraform-oci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+      - run: terraform -chdir=deploy/terraform/oci fmt -check
+      - run: terraform -chdir=deploy/terraform/oci init -backend=false -input=false && terraform -chdir=deploy/terraform/oci validate

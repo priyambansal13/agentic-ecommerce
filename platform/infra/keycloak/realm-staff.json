@@ -1,0 +1,233 @@
+{
+  "realm": "staff",
+  "enabled": true,
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "accessTokenLifespan": 900,
+  "sslRequired": "none",
+  "roles": {
+    "realm": [
+      {
+        "name": "admin",
+        "description": "Platform administrator"
+      },
+      {
+        "name": "support",
+        "description": "Approves refunds, handles tickets"
+      },
+      {
+        "name": "fraud-analyst",
+        "description": "Investigates fraud alerts"
+      },
+      {
+        "name": "finance",
+        "description": "Second approver for high-value refunds, payouts"
+      },
+      {
+        "name": "moderator",
+        "description": "Catalog moderation"
+      },
+      {
+        "name": "compliance",
+        "description": "Seller KYC verification (GST/PAN, bank)"
+      },
+      {
+        "name": "brand-team",
+        "description": "Brand Registry approvals"
+      },
+      {
+        "name": "category-team",
+        "description": "Gated category approvals"
+      }
+    ]
+  },
+  "defaultRoles": [],
+  "clients": [
+    {
+      "clientId": "web-admin",
+      "name": "web-admin",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "dev-web-admin-secret",
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false,
+      "redirectUris": [
+        "http://localhost:3300/*"
+      ],
+      "webOrigins": [
+        "http://localhost:3300"
+      ],
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "post.logout.redirect.uris": "http://localhost:3300/*"
+      }
+    },
+    {
+      "clientId": "agents",
+      "name": "Agent Gateway",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "dev-agents-secret",
+      "standardFlowEnabled": false,
+      "serviceAccountsEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "attributes": {
+        "standard.token.exchange.enabled": "true"
+      }
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "email": "admin@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Ada",
+      "lastName": "Dev",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "admin"
+      ]
+    },
+    {
+      "username": "support",
+      "email": "support@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Sid",
+      "lastName": "Dev",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "support",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "support"
+      ]
+    },
+    {
+      "username": "finance",
+      "email": "finance@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Fin",
+      "lastName": "Dev",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "finance",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "finance"
+      ]
+    },
+    {
+      "username": "analyst",
+      "email": "analyst@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Ana",
+      "lastName": "Dev",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "analyst",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "fraud-analyst"
+      ]
+    },
+    {
+      "username": "moderator",
+      "email": "moderator@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Mo",
+      "lastName": "Dev",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "moderator",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "moderator"
+      ]
+    },
+    {
+      "username": "compliance",
+      "email": "compliance@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Kavya",
+      "lastName": "Compliance",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "compliance",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "compliance"
+      ],
+      "id": "0c0c0c0c-0000-4000-8000-000000000011"
+    },
+    {
+      "username": "brands",
+      "email": "brands@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Bharat",
+      "lastName": "Brands",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "brands",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "brand-team"
+      ],
+      "id": "0c0c0c0c-0000-4000-8000-000000000012"
+    },
+    {
+      "username": "category",
+      "email": "category@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Chitra",
+      "lastName": "Category",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "category",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "category-team"
+      ],
+      "id": "0c0c0c0c-0000-4000-8000-000000000013"
+    }
+  ]
+}

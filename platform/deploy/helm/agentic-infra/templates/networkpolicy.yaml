@@ -1,0 +1,23 @@
+# ac-infra accepts traffic only from: itself (Keycloak → Postgres, Jobs), the ac-apps namespace (services,
+# db-bootstrap) and — for Keycloak only — the ingress controller (Traefik in kube-system).
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: { name: infra-default, labels: { {{ include "infra.labels" . }} } }
+spec:
+  podSelector: {}
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - podSelector: {}
+        - namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: {{ .Values.appsNamespace }} } }
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata: { name: keycloak-from-ingress, labels: { {{ include "infra.labels" . }} } }
+spec:
+  podSelector: { matchLabels: { app: keycloak } }
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - namespaceSelector: { matchLabels: { kubernetes.io/metadata.name: kube-system } }
+      ports: [{ port: 8080 }]

@@ -1,0 +1,12 @@
+region          = "ap-south-1"
+certificate_arn = null # set an ACM cert ARN to enable HTTPS
+public_app_url  = "https://dev.example.com"
+oidc_issuers    = ["https://auth.dev.example.com/realms/customers", "https://auth.dev.example.com/realms/staff"]
+cors_origins    = ["http://localhost:3300", "https://dev.example.com"]
+
+manage_ecr_repositories   = true # dev owns the account-wide ac/<name> repositories
+dedicated_db_services     = []
+scale_to_zero_noncritical = true
+
+default_image_tag = "latest"
+image_tags        = {} # e.g. { catalog = "1a2b3c4", storefront = "9f8e7d6" }

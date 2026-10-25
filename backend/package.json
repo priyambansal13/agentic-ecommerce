@@ -1,0 +1,24 @@
+{
+  "name": "agentic-commerce-backend",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.14.0",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --concurrency=40",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "gen": "node scripts/gen.mjs",
+    "changeset": "changeset",
+    "libs:version": "changeset version",
+    "libs:publish": "node scripts/publish-libs.mjs",
+    "policy:test": "docker run --rm -v \"$PWD/policies:/policies:ro\" openpolicyagent/opa:1.21.3 test /policies -v"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.29.0",
+    "turbo": "^2.11.9",
+    "typescript": "^6.0.2"
+  }
+}

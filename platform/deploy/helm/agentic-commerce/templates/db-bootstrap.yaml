@@ -1,0 +1,34 @@
+# Database per service: creates/updates role svc_<db> and database ac_<db> (owner = that role, CONNECT revoked from
+# everyone else) for every service with a database. SQL (incl. passwords) is in Secret ac-db-bootstrap (CLI).
+# Object store per service ("objectStore": true): bucket ac-<svc> + MinIO user svc-<svc> limited to it (objectstore.sh).
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: db-bootstrap
+  labels: { {{ include "ac.labels" . }} }
+  annotations: { "helm.sh/hook": pre-install,pre-upgrade, "helm.sh/hook-weight": "-5", "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded }
+spec:
+  backoffLimit: 20
+  template:
+    metadata: { labels: { app: db-bootstrap, {{ include "ac.labels" . }} } }
+    spec:
+      restartPolicy: OnFailure
+      containers:
+        - name: psql
+          image: {{ .Values.dbBootstrap.image }}
+          command: [sh, -c, "until pg_isready -h $PGHOST; do sleep 2; done && psql -v ON_ERROR_STOP=1 -q -f /sql/bootstrap.sql && echo done"]
+          env:
+            - { name: PGHOST, value: postgres.{{ .Values.global.infraNamespace }}.svc.cluster.local }
+            - { name: PGUSER, value: postgres }
+            - { name: PGDATABASE, value: postgres }
+            - name: PGPASSWORD
+              valueFrom: { secretKeyRef: { name: ac-db-bootstrap, key: POSTGRES_PASSWORD } }
+          volumeMounts: [{ name: sql, mountPath: /sql }]
+        - name: objectstore
+          image: {{ .Values.dbBootstrap.minioImage }}
+          command: [sh, /sql/objectstore.sh]
+          env:
+            - name: MINIO_ROOT_PASSWORD
+              valueFrom: { secretKeyRef: { name: ac-db-bootstrap, key: MINIO_ROOT_PASSWORD } }
+          volumeMounts: [{ name: sql, mountPath: /sql }]
+      volumes: [{ name: sql, secret: { secretName: ac-db-bootstrap, items: [{ key: bootstrap.sql, path: bootstrap.sql }, { key: objectstore.sh, path: objectstore.sh }] } }]
